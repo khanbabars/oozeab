@@ -43,7 +43,7 @@ export default class Navbar extends Component {
 
               <Link
                 
-                to="/#Konsultuppdrag"
+                to="/#konsultuppdrag"
                 smooth={true}
                 offset={-70}
                 duration={100}>
@@ -51,16 +51,31 @@ export default class Navbar extends Component {
 <p style={{ paddingTop: '20px',fontSize: '20px', fontWeight: '400', color: '#434952', paddingLeft: '50px'}} >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Konsultuppdrag </p>
               </Link>
             </li>
+
+            <li >
+
+<Link
+  
+  to="/#kunder"
+  smooth={true}
+  offset={-70}
+  duration={100}>
+
+<p style={{ paddingTop: '20px',fontSize: '20px', fontWeight: '400', color: '#434952', paddingLeft: '50px'}} >För kunder</p>
+</Link>
+</li>
+
+
             <li >
               <Link
                 
-                to="/#omoss"
+                to="/#tjanster"
                 smooth={true}
                 offset={-70}
                 duration={100}
               
               >
-                <p style={{ paddingTop: '20px', fontSize: '20px', fontWeight: '400', color: '#434952'}} >&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Om oss</p>
+                <p style={{ paddingTop: '20px', fontSize: '20px', fontWeight: '400', color: '#434952'}} >&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Tjänster</p>
               </Link>
             </li>
             <li >

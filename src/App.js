@@ -15,10 +15,11 @@ function App() {
     <CookieConsentPage/>
    <Provider store = {store}>
       <Navigationbar/>
-        <Page   id="Konsultuppdrag"/>
-        <Page   id="tjänster"/>
-        <Page   id="omoss"/>
+        <Page   id="hem"/>
+        <Page   id="konsultuppdrag"/>
+        <Page   id="tjanster"/>
         <Page   id="kontakt"/> 
+      
       </Provider>
   
   </React.Fragment>
