@@ -1,0 +1,66 @@
+{
+  "name": "blog",
+  "author": "Shazib Saleem Warraich",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "https://oozeab.se",
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
+    "base-64": "^0.1.0",
+    "bootstrap": "^4.5.2",
+    "cors": "^2.8.5",
+    "headers": "^0.9.6",
+    "http-proxy-middleware": "^1.0.5",
+    "jquery": "^3.5.1",
+    "mdbreact": "^4.27.0",
+    "react": "^16.13.1",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
+    "react-blink-text": "^1.0.5",
+    "react-bootstrap": "^1.3.0",
+    "react-cookie-consent": "^6.4.1",
+    "react-dom": "^16.13.1",
+    "react-hook-form": "^6.8.0",
+    "react-icons": "^4.3.1",
+    "react-modal": "^3.14.4",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "react-router-hash-link": "^2.0.0",
+    "react-scripts": "3.4.1",
+    "react-scroll": "^1.8.1",
+    "react-social-icons": "^4.1.0",
+    "react-spring": "^9.0.0-rc.3",
+    "react-star-ratings": "^2.3.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-logger": "^3.0.6",
+    "redux-react-hook": "^4.0.3",
+    "redux-thunk": "^2.3.0",
+    "smoothscroll-polyfill": "^0.4.4",
+    "styled-components": "^5.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "cleanBuild": "rimraf ./build/*",
+    "build": "npm run cleanBuild && set \"GENERATE_SOURCEMAP=false\" && react-scripts build ",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

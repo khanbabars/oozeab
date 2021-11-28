@@ -1,0 +1,79 @@
+.App {
+  text-align: center;
+}
+
+
+
+.App-logo {
+  
+  border: 1px solid silver;
+  text-align: left;
+  height: 0px;
+ }
+
+.App-header {
+  background-color:white;
+   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: white;
+  text-decoration: none;
+  font-size :30px;
+  position:relative;
+  animation-duration: 5000ms;
+  animation-name: blink;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+ 
+}
+
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+    color:black;
+  }
+
+  25% {
+    color:white;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+    color:black;
+  }
+
+  75% {
+   opacity: 0;
+   color: white;
+ }
+
+ 100% {
+   opacity: 1;
+   color:black;
+ }
+}
+
+li {list-style-type: none;}
+
+
+.customNav a:hover, a:visited, a:link, a:active {
+
+  text-decoration: none!important;
+ color:black;
+ padding-top:  0px;
+  -webkit-box-shadow: none!important;
+  box-shadow: none!important;
+
+  
+}
+
+
