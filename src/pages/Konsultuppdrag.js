@@ -19,7 +19,7 @@ export const Konsultuppdrag = () => {
         <div>
    
         <br/><br/><br/>
-        <p style={{ paddingTop: '20px',fontSize: '32px', color: 'black', textAlign:'left'}}><ul>Hitta konsultuppdrag</ul></p>     <hr/>  
+        <p style={{ paddingTop: '20px',fontSize: '32px', color: 'black', textAlign:'left'}}>Hitta konsultuppdrag</p>     <hr/>  
         <br/>
         &nbsp;&nbsp; <Assignments/> 
         <img src={services} alt={"services"} /><br/>
