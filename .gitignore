@@ -31,7 +31,8 @@ Blink.js
 Example.js
 favicon.ico
 public
-api
+api/BlogTitle.js
+api/ApiTest.js
 api.js
 TestApi.js
 Main.js
@@ -40,3 +41,4 @@ blogTitle.js
 apiTest.js
 prototype.js
 test.js
+api/maxcdn.bootstrapcdn.com
