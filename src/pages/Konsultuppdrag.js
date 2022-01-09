@@ -7,7 +7,7 @@ import Assignments from '../api/Assignments';
 
 
 
-export const Konsultuppdrag = () => { 
+export const Konsultuppdrag = ({browseAssignment}) => { 
  
 
 
@@ -22,7 +22,7 @@ export const Konsultuppdrag = () => {
         <p style={{ paddingTop: '20px',fontSize: '32px', color: 'black', textAlign:'left'}}>Hitta konsultuppdrag</p>     
   <hr/>  
         <br/>
-        &nbsp;&nbsp; <Assignments/> 
+        &nbsp;&nbsp; <Assignments browseAssignment={browseAssignment}/> 
         <img src={services} alt={"services"} /><br/>
         
         <br/> <br/>      <br/> <br/>      <br/> <br/>      <br/> <br/>      <br/> <br/>      <br/> <br/>

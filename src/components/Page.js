@@ -5,7 +5,7 @@ import {Aboutus} from '../pages/Aboutus'
 import Contact from '../pages/Contact'
 
 
-export default function Page({ id }) {
+export default function Page({ id,browseAssignment }) {
   return (
 
       <div id={id}>
@@ -14,7 +14,7 @@ export default function Page({ id }) {
           return <Home/>;
                   } 
         else if (id === 'konsultuppdrag') {
-          return <Konsultuppdrag />;
+          return <Konsultuppdrag browseAssignment={browseAssignment}/>;
         } 
         else if (id === 'tjanster'){
           return <Aboutus />;

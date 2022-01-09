@@ -5,6 +5,7 @@ import {API_ASSIGNMENTS} from '../cache/api'
 export default class Assignments extends React.Component {
     constructor(props){
         super(props);
+        this.browseAssignment = this.props.browseAssignment
         this.showProjectDetail = this.showProjectDetail.bind(this);
         this.state = {  url : API_ASSIGNMENTS,  
                         loading: true,  items: [],  setInterval: 3600000, 
@@ -14,7 +15,7 @@ export default class Assignments extends React.Component {
                         btnShowMore :'läs mer',
                         btnShowLess :'dölja',
                         ids: [],
-                        setVisible : 7
+                        setVisible : 7,
                     }};
 async componentDidMount() {  
         fetchData(this.state).then((item)=>{
@@ -64,6 +65,10 @@ static getDerivedStateFromProps(nextProps, state)
 
 
 
+  
+
+
+
       render() { const { loading} = this.state;
         if (loading)  {  
         return <div>Loading ... </div>; } 
@@ -91,12 +96,11 @@ static getDerivedStateFromProps(nextProps, state)
     &nbsp;
     
     <button style= {{ fontSize:'14px', fontWeight:'normal', borderRadius: '5px'}}
+
     type="button"
-    onClick={(e) => {
-      e.preventDefault();
-      window.location.href='/ApplyJob';
-      }}
->Ansöka</button>
+    onClick={(e) => { e.preventDefault();  window.open("/ApplyJob")}}>
+        Ansöka
+        </button>
 
     <hr></hr>
      <br/></li>)}</ul>
