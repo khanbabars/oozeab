@@ -1,6 +1,6 @@
 import React from "react";
 import {API_ASSIGNMENTS} from '../cache/api'
-
+   
 
 export default class Assignments extends React.Component {
     constructor(props){
@@ -64,12 +64,13 @@ static getDerivedStateFromProps(nextProps, state)
 
 
 
-      render() { const { loading, items} = this.state;
+      render() { const { loading} = this.state;
         if (loading)  {  
         return <div>Loading ... </div>; } 
         else {
         return (  
  <React.Fragment> 
+
 
     <div> <ul >{this.state.items.slice(0,this.state.setVisible).map((item, index) => <li key={index}> 
 
@@ -86,7 +87,17 @@ static getDerivedStateFromProps(nextProps, state)
 
  {this.state.ids.includes(+item.project_id)  &&  item.project_details }</b>  <br/><br/>
    
-    <ApplyButton item={item} showLess={this.state.btnShowLess} event={this.showProjectDetail} text={this.state.btnShowMore} ids={this.state.ids}/>&nbsp;<button style= {{ fontSize:'14px', fontWeight:'normal', borderRadius: '5px'}}>Ansöka</button>
+    <ApplyButton item={item} showLess={this.state.btnShowLess} event={this.showProjectDetail} text={this.state.btnShowMore} ids={this.state.ids}/>
+    &nbsp;
+    
+    <button style= {{ fontSize:'14px', fontWeight:'normal', borderRadius: '5px'}}
+    type="button"
+    onClick={(e) => {
+      e.preventDefault();
+      window.location.href='/ApplyJob';
+      }}
+>Ansöka</button>
+
     <hr></hr>
      <br/></li>)}</ul>
      

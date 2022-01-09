@@ -45,7 +45,7 @@ render() {
 
               <MDBView  >            
      
-     <img src = {require('../images/mix.jpg' )  } style={{ width: '50%',  textAlign: 'center', marginLeft:'auto', display : 'block', marginRight:'auto'}}/>
+     <img src = {require('../images/mix.jpg')  } style={{ width: '50%',  textAlign: 'center', marginLeft:'auto', display : 'block', marginRight:'auto'} } alt='mix_photo'/>
     </MDBView>
         
 

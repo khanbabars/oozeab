@@ -35,12 +35,18 @@ static getDerivedStateFromProps(nextProps, state)
         return <div>Loading ... </div>; } 
         else {
         return (  
- <React.Fragment> 
+ <React.Fragment>        
+
     <div> <ul >{this.state.items.map((item, index) => <li key={index}> &nbsp;&nbsp;<a style={{ paddingTop: '5px', fontSize: '20px', color: '#434952'}}  href={item.project_heading}>
         <b style={{ fontSize:'19px', padding: '5px'}}>{item.project_heading}</b> &nbsp;&nbsp;&nbsp;<b style={{ fontSize:'12px', borderRadius: '25px', color:'white', backgroundColor:'#426279', padding: '2px'}} >  UP</b> 
         <br/> &nbsp;&nbsp;&nbsp;&nbsp;Omfattning: {item.project_availablity}   
         <br/>&nbsp;&nbsp;&nbsp;&nbsp;Ansök senast:{item.project_details} 
+    
         <br/>&nbsp;&nbsp;&nbsp; <b style= {{ fontSize:'14px', borderRadius: '25px', color:'white', backgroundColor:'#17a2b8', padding : '4px'}}>{item.project_location}</b>   </a> <br/><br/><br/></li>)}</ul></div>
+
+          
+            
+ 
  </React.Fragment>) }}}
  
  async function fetchData(state){      

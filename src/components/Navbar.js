@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { NavHashLink as Link } from 'react-router-hash-link';
 import logo from '../images/ooze.PNG';
+   
 
 
 export default class Navbar extends Component {
@@ -19,7 +20,10 @@ export default class Navbar extends Component {
       <nav className="nav" id="navbar" >
         <div className="nav-content" >
           <div  className="nav-header" >
-            <Link to = "/">
+
+
+            
+            <Link exact to = "/">
                
                 </Link>
 
@@ -36,10 +40,10 @@ export default class Navbar extends Component {
   offset={-70}
   duration={100}>
 
-<p style={{ paddingTop: '10px', height: '40px', width: '40px'}} > <img src={logo} /></p>
-</Link>
+<p style={{ paddingTop: '10px', height: '40px', width: '50px', paddingRight: '100px'}} > <img src={logo} alt='logo_photo'/></p>
+</Link>&nbsp;
 </li>
-            <li >
+<li >
 
               <Link
                 
@@ -48,7 +52,7 @@ export default class Navbar extends Component {
                 offset={-70}
                 duration={100}>
 
-<p style={{ paddingTop: '20px',fontSize: '20px', fontWeight: '400', color: '#434952', paddingLeft: '50px'}} >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Konsultuppdrag </p>
+<p style={{ paddingTop: '20px',fontSize: '20px', fontWeight: '400', color: '#434952', paddingLeft: '40px'}} > Konsultuppdrag </p>
               </Link>
             </li>
 
@@ -100,8 +104,15 @@ export default class Navbar extends Component {
 
 <p style={{ paddingLeft: '330px', paddingTop: '10px', height: '30px', width: '30px'}} > <img src={snow} /></p>
 </Link>
-</li> */}
+</li> */
+
+
+
+}
           </ul>
+          
+  
+       
         </div>
       </nav>
       </section>

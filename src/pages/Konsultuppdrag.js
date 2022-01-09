@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { MDBContainer } from 'mdbreact';
 // import AboutText from '../blogs/about'
 import services from '../images/services.PNG';
 import Assignments from '../api/Assignments';
-import Assignment_detail from '../api/Assignment_detail';
+
 
 
 
@@ -17,9 +17,10 @@ export const Konsultuppdrag = () => {
     <MDBContainer >
   
         <div>
-   
+
         <br/><br/><br/>
-        <p style={{ paddingTop: '20px',fontSize: '32px', color: 'black', textAlign:'left'}}>Hitta konsultuppdrag</p>     <hr/>  
+        <p style={{ paddingTop: '20px',fontSize: '32px', color: 'black', textAlign:'left'}}>Hitta konsultuppdrag</p>     
+  <hr/>  
         <br/>
         &nbsp;&nbsp; <Assignments/> 
         <img src={services} alt={"services"} /><br/>

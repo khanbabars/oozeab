@@ -1,12 +1,10 @@
 import React from 'react';
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBMask, MDBView } from 'mdbreact';
-import { BrowserRouter as Router } from 'react-router-dom';
-import {Jumbotron} from '../jumbotron'
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarToggler, MDBCollapse, MDBMask, MDBView } from 'mdbreact';
 import '../App.css'
 import Navbar from './Navbar'
 import Page from './Page'
-
-
+import { BrowserRouter as Router} from 'react-router-dom';
+    
 
 
 class Navigationbar extends React.Component {
@@ -29,36 +27,31 @@ class Navigationbar extends React.Component {
     return (
       <div>
         <header>
-        <Page   id="hem"/>
-          <Router>
-      
+     
+          <Router >
+
+          <Page   id="hem"/>   
             <MDBNavbar  fixed="top" dark expand="md" scrolling transparent style={{backgroundColor: 'white'}}>
               <MDBNavbarBrand >
-                <Navbar/>
+              <Navbar/>
+              
               </MDBNavbarBrand>
               {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
               <MDBCollapse isOpen={this.state.collapse} navbar>
-                <MDBNavbarNav left>
-                 
-                    
-                  
-                  
-               
-                  </MDBNavbarNav>
-                  {/* <SocialIcon url="https://github.com/khanbabars" />&nbsp;&nbsp;
-                  <SocialIcon url="https://twitter.com/khanbabars" />&nbsp;&nbsp;
-                  <SocialIcon url="https://www.linkedin.com/in/shazib-saleem-warraich-6a04a926" /> */}
               </MDBCollapse>
             </MDBNavbar>
             
-         
+
         
           <MDBView  >
-          <Jumbotron/>
+          {/* <Jumbotron/> */}
             <MDBMask overlay="purple-light" className="flex-center flex-column text-white text-center">
              
             </MDBMask>
           </MDBView>
+         
+      
+      
  </Router>
         </header>
       </div>
