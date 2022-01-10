@@ -35,7 +35,7 @@ export default class Navbar extends Component {
 
 <Link
   
-  to="/#hem"
+  exact to="/#hem"
   smooth={true}
   offset={-70}
   duration={100}>

@@ -1,4 +1,4 @@
-import React, { useState ,useEffect } from 'react';
+import React, { useState  } from 'react';
 import Navigationbar from '../src/components/Navigationbar'
 import Page from './components/Page'
 import {Provider} from 'react-redux'
@@ -46,7 +46,6 @@ return (
 <React.Fragment>
   <Router>
 
-  <Navigationbar/>
   <Switch>
   <Route path='/' component={Main} exact={true}/>
     <Route path='/ApplyJob' component={ApplyJob} exact={true} />

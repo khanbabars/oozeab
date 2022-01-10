@@ -11,8 +11,8 @@ export default class Assignments extends React.Component {
                         loading: true,  items: [],  setInterval: 3600000, 
                         fetch: false,
                         active : false,  
-                        btnProjectDetail: 'läs mer',
-                        btnShowMore :'läs mer',
+                        btnProjectDetail: 'Läs mer',
+                        btnShowMore :'Läs mer',
                         btnShowLess :'dölja',
                         ids: [],
                         setVisible : 7,
@@ -99,7 +99,7 @@ static getDerivedStateFromProps(nextProps, state)
 
     type="button"
     onClick={(e) => { e.preventDefault();  window.open("/ApplyJob")}}>
-        Ansöka
+        Ansök
         </button>
 
     <hr></hr>
