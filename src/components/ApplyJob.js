@@ -5,17 +5,23 @@ import {API_ASSIGNMENT_DETAIL} from '../cache/api'
 
 
 
- function getAssignmentDetail () {
-    return fetch(API_ASSIGNMENT_DETAIL)
+ function getAssignmentDetail (id) {
+    return fetch(API_ASSIGNMENT_DETAIL + id)
       .then(data => data.json())
+     
   }
 
-export const ApplyJob = () => {
+export const ApplyJob = (props) => {
+
+  
+    console.log(props.match.url.substring(1))
     const [assignment, setAssignment] = useState([]);
 
     useEffect(() => {
         let mounted = true;
-        getAssignmentDetail()
+        let assignment_id = props.match.url.substring(1)
+  
+        getAssignmentDetail(assignment_id)
           .then(items => {
             if(mounted) {
                 setAssignment(items)
@@ -31,7 +37,7 @@ export const ApplyJob = () => {
 <NavLink
 to ="/">
 
-<a  href ="">
+
 &nbsp; &nbsp;  
 <img src={logos} 
 style ={{  paddingTop: '23px', height: '73px', width: '116px', paddingLeft : '5px' }}
@@ -39,14 +45,12 @@ style ={{  paddingTop: '23px', height: '73px', width: '116px', paddingLeft : '5p
 alt='logo_photo_assigment' />
 
 
-    </a>
 
 </NavLink>
-<br/>   <br/>   <br/>
-        <h1> Ansöka  Ansöka Ansöka Ansöka Ansöka Ansöka Ansöka</h1> 
-        
-       <p>{assignment.project_id}</p>
-     
+<br/>  <br/> <br/> <br/>
+<hr/>
+ <h2>&nbsp;&nbsp;{assignment.items && assignment.items[0].project_heading}</h2>
+      <hr/>
        </React.Fragment>
         
         )

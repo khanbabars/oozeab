@@ -48,7 +48,7 @@ return (
 
   <Switch>
   <Route path='/' component={Main} exact={true}/>
-    <Route path='/ApplyJob' component={ApplyJob} exact={true} />
+    <Route path='/:ApplyJob' component={ApplyJob} exact={true} />
     </Switch>
       </Router>
   </React.Fragment>);}

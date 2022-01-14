@@ -66,7 +66,7 @@ static getDerivedStateFromProps(nextProps, state)
 
 
   
-
+     
 
 
       render() { const { loading} = this.state;
@@ -86,7 +86,7 @@ static getDerivedStateFromProps(nextProps, state)
         <br/>Omfattning: {item.project_availablity}  
         <br/> 
         <b style= {{ fontSize:'13px', borderRadius: '25px', color:'white', backgroundColor:'#17a2b8', padding : '5px'}}>{item.project_location}</b>  
-
+      
         &nbsp;
  <b  style = {{ fontSize:'16px', fontWeight:'normal', whiteSpace:'pre-wrap'}}>
 
@@ -96,9 +96,9 @@ static getDerivedStateFromProps(nextProps, state)
     &nbsp;
     
     <button style= {{ fontSize:'14px', fontWeight:'normal', borderRadius: '5px'}}
-
+ 
     type="button"
-    onClick={(e) => { e.preventDefault();  window.open("/ApplyJob")}}>
+    onClick={(e) => { e.preventDefault();  window.open("/"+item.project_id)}}>
         Ansök
         </button>
 
@@ -107,7 +107,7 @@ static getDerivedStateFromProps(nextProps, state)
      
      <button style= {{ fontSize:'18px', borderRadius: '4px', textAlign:'center', marginLeft:'500px', marginBottom:'100px'}}
         onClick = {this.loadMoreItems}>Visa flera </button>
-   
+  
      <br/><br/><br/><br/>
      </div>
 
