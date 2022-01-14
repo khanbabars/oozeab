@@ -47,10 +47,24 @@ alt='logo_photo_assigment' />
 
 
 </NavLink>
-<br/>  <br/> <br/> <br/>
+<br/>  <br/> 
 <hr/>
- <h2>&nbsp;&nbsp;{assignment.items && assignment.items[0].project_heading}</h2>
+ <h3>&nbsp;&nbsp;{assignment.items && assignment.items[0].project_heading}</h3>
       <hr/>
+
+      
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Startdatum:</b>  &nbsp;{assignment.items && assignment.items[0].project_start_date}   
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Slutdatum:</b>   &nbsp; {assignment.items && assignment.items[0].project_end_date}   
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Omfattning:</b>  &nbsp;{assignment.items && assignment.items[0].project_availablity}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Ansök senast:</b>&nbsp;{assignment.items && assignment.items[0].application_close_date}
+        <br/>
+        <br/> 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <p style = {{ fontSize:'16px', fontWeight:'normal', whiteSpace:'pre-wrap', paddingLeft:'28px'}}>{assignment.items && assignment.items[0].project_details}</p>
+       
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Skicka CV till </b> uppdrag@oozeab.se
+    
        </React.Fragment>
         
         )

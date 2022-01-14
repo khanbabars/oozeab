@@ -84,18 +84,18 @@ static getDerivedStateFromProps(nextProps, state)
         <br/>Slutdatum: {item.project_end_date}   
         <br/>Ansök senast:{item.application_close_date}
         <br/>Omfattning: {item.project_availablity}  
-        <br/> 
-        <b style= {{ fontSize:'13px', borderRadius: '25px', color:'white', backgroundColor:'#17a2b8', padding : '5px'}}>{item.project_location}</b>  
+    
       
-        &nbsp;
+       
  <b  style = {{ fontSize:'16px', fontWeight:'normal', whiteSpace:'pre-wrap'}}>
 
- {this.state.ids.includes(+item.project_id)  &&  item.project_details }</b>  <br/><br/>
+ {this.state.ids.includes(+item.project_id)  &&  item.project_details }</b>  <br/>
+{/*    
+    <ApplyButton item={item} showLess={this.state.btnShowLess} event={this.showProjectDetail} text={this.state.btnShowMore} ids={this.state.ids}/> */}
    
-    <ApplyButton item={item} showLess={this.state.btnShowLess} event={this.showProjectDetail} text={this.state.btnShowMore} ids={this.state.ids}/>
-    &nbsp;
-    
-    <button style= {{ fontSize:'14px', fontWeight:'normal', borderRadius: '5px'}}
+  
+        <b style= {{ fontSize:'13px', borderRadius: '25px', color:'white', backgroundColor:'#17a2b8', padding : '5px'}}>{item.project_location}</b>  
+        &nbsp; &nbsp;<button style= {{ fontSize:'14px', fontWeight:'normal', borderRadius: '5px'}}
  
     type="button"
     onClick={(e) => { e.preventDefault();  window.open("/"+item.project_id)}}>
