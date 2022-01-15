@@ -95,7 +95,7 @@ static getDerivedStateFromProps(nextProps, state)
    
   
         <b style= {{ fontSize:'13px', borderRadius: '25px', color:'white', backgroundColor:'#17a2b8', padding : '5px'}}>{item.project_location}</b>  
-        &nbsp; &nbsp;<button style= {{ fontSize:'14px', fontWeight:'normal', borderRadius: '5px'}}
+        &nbsp; &nbsp;<button style= {{ fontSize:'14px', fontWeight:'normal', borderRadius: '5px', marginTop:'5px'}}
  
     type="button"
     onClick={(e) => { e.preventDefault();  window.open("/"+item.project_id)}}>
