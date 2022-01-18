@@ -3,13 +3,14 @@ import { NavLink } from 'react-router-dom'
 import logos from '../images/ooze.PNG';
 import {API_ASSIGNMENT_DETAIL, OOZE_SITE_ADDRESS} from '../cache/api'
 
+
   import {
           LinkedinShareButton, LinkedinIcon, 
-          TwitterShareButton,  TwitterIcon, 
-          FacebookMessengerShareButton, FacebookMessengerIcon,
+        //   TwitterShareButton,  TwitterIcon, 
+        //   FacebookMessengerShareButton, FacebookMessengerIcon,
           EmailShareButton,             EmailIcon} from "react-share";
 
-
+import UploadCV from '../components/UploadCV'
 
 
 
@@ -96,28 +97,28 @@ alt='logo_photo_assigment' />
 
 
 
-
+{/* 
           <TwitterShareButton 
                 url={assignmentUrl}
                 quote={"For more information visit " + OOZE_SITE_ADDRESS}
                 hashtag="#OOZEAB"
             >
                  <TwitterIcon size={32}  round={true}/>
-              </TwitterShareButton>&nbsp;
+              </TwitterShareButton>&nbsp; */}
 
-              <FacebookMessengerShareButton 
+              {/* <FacebookMessengerShareButton 
                 url={assignmentUrl}
                 quote={"For more information visit " + OOZE_SITE_ADDRESS}
                 hashtag="#OOZEAB"
             >
                  <FacebookMessengerIcon size={32}  round={true}/>
               </FacebookMessengerShareButton>&nbsp;
-    
+     */}
    
        <br/><br/>
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Skicka CV till </b> uppdrag@oozeab.se
-
-
+   
+       <br/><br/>
+       <UploadCV/>
        </React.Fragment>
         
         )

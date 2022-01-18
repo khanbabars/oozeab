@@ -36,9 +36,7 @@ render() {
         
         <MDBCol lg="12" className="lg-0 mb-12 text-left my-5">
           
-        <div>
-               
-              </div>            
+            
           <MDBCard >
 
             <MDBCardBody>

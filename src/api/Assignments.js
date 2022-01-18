@@ -79,7 +79,7 @@ static getDerivedStateFromProps(nextProps, state)
 
     <div> <ul >{this.state.items.slice(0,this.state.setVisible).map((item, index) => <li key={index}> 
 
-        <b style={{ fontSize:'21px'}}>{item.project_heading}</b><b style={{ fontSize:'12px', borderRadius: '25px', color:'white', backgroundColor:'#426279', padding: '2px'}} >  UP</b>   
+        <b style={{ fontSize:'19px'}}>{item.project_heading}</b><b style={{ fontSize:'11px', borderRadius: '25px', color:'white', backgroundColor:'#426279', padding: '2px'}} >  UP</b>   
         <br/>Startdatum: {item.project_start_date}   
         <br/>Slutdatum: {item.project_end_date}   
         <br/>Ansök senast:{item.application_close_date}

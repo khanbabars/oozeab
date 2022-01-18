@@ -28,3 +28,23 @@ project_location              varchar2(2000),
 application_close_date        varchar2(200),
 dump_load_id                  number   
 );
+
+
+create table recevie_application
+ ( 
+   resume_id                            number generated always as identity,
+   created                              date default sysdate,
+   first_name                           varchar2(1000),
+   last_name                            varchar2(1000),
+   project_name                         varchar2(4000),
+   project_supplier                     varchar2(1000),
+   contact_number                       number,
+   email_address                        varchar2(1000),
+   linkedin_profile                     varchar(1000),
+   resume                               blob,
+   motivation_letter                    blob
+);
+
+
+
+---------------------------------------
