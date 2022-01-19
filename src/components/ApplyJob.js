@@ -70,54 +70,34 @@ alt='logo_photo_assigment' />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Omfattning:</b>  &nbsp;{assignment.items && assignment.items[0].project_availablity}
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Ansök senast:</b>&nbsp;{assignment.items && assignment.items[0].application_close_date}
         
-        <br/>
         
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-        <p style = {{ fontSize:'15px', whiteSpace:'pre-wrap', paddingLeft:'28px', border : '1px solid gainsboro'}}>{assignment.items && assignment.items[0].project_details}</p>
-       
+      
      
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-         <LinkedinShareButton 
-                url={assignmentUrl}
-                quote={"For more information visit " + OOZE_SITE_ADDRESS}
-                hashtag="#OOZEAB"
-            >
-                 <LinkedinIcon size={32}  round={true}/>
-              </LinkedinShareButton>&nbsp;
+<LinkedinShareButton 
+       url={assignmentUrl}
+       quote={"For more information visit " + OOZE_SITE_ADDRESS}
+       hashtag="#OOZEAB"
+   >
+        <LinkedinIcon size={32}  round={true}/>
+     </LinkedinShareButton>&nbsp;
 
-              <EmailShareButton 
-                url={assignmentUrl}
-                quote={"For more information visit " + OOZE_SITE_ADDRESS}
-                hashtag="#OOZEAB"
-            >
-                 <EmailIcon size={32}  round={true}/>
-              </EmailShareButton>&nbsp;
+     <EmailShareButton 
+       url={assignmentUrl}
+       quote={"For more information visit " + OOZE_SITE_ADDRESS}
+       hashtag="#OOZEAB"
+   >
+        <EmailIcon size={32}  round={true}/>
+     </EmailShareButton>&nbsp;
 
-
-
-{/* 
-          <TwitterShareButton 
-                url={assignmentUrl}
-                quote={"For more information visit " + OOZE_SITE_ADDRESS}
-                hashtag="#OOZEAB"
-            >
-                 <TwitterIcon size={32}  round={true}/>
-              </TwitterShareButton>&nbsp; */}
-
-              {/* <FacebookMessengerShareButton 
-                url={assignmentUrl}
-                quote={"For more information visit " + OOZE_SITE_ADDRESS}
-                hashtag="#OOZEAB"
-            >
-                 <FacebookMessengerIcon size={32}  round={true}/>
-              </FacebookMessengerShareButton>&nbsp;
-     */}
+     <br/> 
+        <p style = {{ fontSize:'15px', whiteSpace:'pre-wrap', paddingLeft:'28px', border : '1px solid gainsboro', marginTop :'15px',paddingTop:'20px', textAlign:'left'}}>{assignment.items && assignment.items[0].project_details}</p>
+       
    
-       <br/><br/>
+      
    
-       <br/><br/>
        <UploadCV/>
        </React.Fragment>
         

@@ -52,7 +52,7 @@ render() {
                 htmlFor="defaultFormRegisterNameEx"
                 className="grey-text"
               >
-                Namn
+                Namn *
               </label>
                 <MDBInput
                 
@@ -69,7 +69,7 @@ render() {
                 htmlFor="defaultFormRegisterNameEx"
                 className="grey-text"
               >
-                Mejl
+                Mejl *
               </label>
               <div className="md-form">
                 <MDBInput
