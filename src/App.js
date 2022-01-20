@@ -6,7 +6,8 @@ import store from './cache/store'
 import {CookieConsentPage} from './components/CookieConsentPage'
 import {Jumbotron} from './jumbotron'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { ApplyJob } from './components/ApplyJob';      
+import { ApplyJob } from './components/ApplyJob';    
+import Footer from './components/Footer'  
 
 
 function Main() {
@@ -38,7 +39,7 @@ setstate({ switchRoute : true})
        <Page   id="tjanster"/>
        <Page   id="kontakt"/>   
       </Provider>   
-      
+      <Footer/>
   </React.Fragment>);}
 }
 function App () { 

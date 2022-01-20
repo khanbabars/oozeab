@@ -2,6 +2,7 @@ import React, { useState, useEffect }  from 'react'
 import { NavLink } from 'react-router-dom'
 import logos from '../images/ooze.PNG';
 import {API_ASSIGNMENT_DETAIL, OOZE_SITE_ADDRESS} from '../cache/api'
+import Footer from '../components/Footer'
 
 
   import {
@@ -61,7 +62,8 @@ alt='logo_photo_assigment' />
 <br/>  <br/> 
 <hr/>
  <h3>&nbsp;&nbsp;{assignment.items && assignment.items[0].project_heading}</h3>
-
+ <p style = {{ fontSize:'11px', textAlign:'left', paddingLeft:'25px'}}>
+ <a href="https://upgraded.se/" target="_blank">{assignment.items && assignment.items[0].consultant_company}</a></p>
       <hr/>
 
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b style= {{ fontSize:'13px', borderRadius: '25px', color:'white', backgroundColor:'#17a2b8', padding : '5px'}}>{assignment.items && assignment.items[0].project_location}</b>  
@@ -91,14 +93,21 @@ alt='logo_photo_assigment' />
    >
         <EmailIcon size={32}  round={true}/>
      </EmailShareButton>&nbsp;
+     
+  
 
      <br/> 
-        <p style = {{ fontSize:'15px', whiteSpace:'pre-wrap', paddingLeft:'28px', border : '1px solid gainsboro', marginTop :'15px',paddingTop:'20px', textAlign:'left'}}>{assignment.items && assignment.items[0].project_details}</p>
+        <p style = {{ fontSize:'15px', whiteSpace:'pre-wrap', paddingLeft:'28px', 
+        border : '1px solid gainsboro', marginTop :'15px',paddingTop:'20px', textAlign:'left'}}>{assignment.items && assignment.items[0].project_details}</p>
+       
        
    
       
    
        <UploadCV/>
+       <br/>    <br/> <br/>    <br/> 
+       
+       <Footer/>
        </React.Fragment>
         
         )

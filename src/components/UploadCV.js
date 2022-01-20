@@ -56,14 +56,14 @@ const  UploadCV = () => {
       <MDBContainer>
       <MDBRow >
         
-        <MDBCol lg="10" className="lg-0 mb-12 text-left my-5">
+        <MDBCol lg="12" className="lg-0 mb-10 text-left my-5">
     
         <MDBCard >
 
         <MDBCardBody>
 
         <p style={{   textAlign: 'center', marginLeft:'auto', 
-        marginRight:'auto', fontWeight : 'bold', fontSize : '22px'}}>Ansök</p>
+        marginRight:'auto', fontWeight : 'bold', fontSize : '22px', color :'#364a61'}}>Ansök</p>
 
       <div className="md-form">
         <MDBInput
@@ -111,13 +111,17 @@ const  UploadCV = () => {
         onChange={(e) => setUploadFile(e.target.files[0])} />
         <br/> 
         <br/> 
+      
+        <div style = {{ fontSize : '15px', color :'#364a61',  
+             border : '1px solid gainsboro', padding :'10px'}}>
       <MDBFormInline>
-      <div>
-      <MDBCheckbox  name='flexCheck' value=''  label='Jag godkänner att mina personuppgifter hanteras i enlighet med följande integritetspolicy' />
-    </div>
+
+      <MDBCheckbox  name='flexCheck' value=''  label='* Jag accepterar GDPR och OOZE AB allmänna villkor.' />
+
 
       </MDBFormInline>
-  
+      </div>
+
       <br/> <br/> <br/> 
         <div className="text-center">
               <MDBBtn color="info" type="submit">
