@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import {OOZE_RECEIVE_CONSULTANT_RESUME} from '../cache/api'
-import { MDBRow, MDBCol, MDBCard, MDBCardBody, MDBBtn, MDBInput,MDBContainer, MDBFormInline } from "mdbreact";
+import { MDBRow, MDBCol, MDBCard, MDBCardBody, MDBBtn, MDBInput,MDBContainer, MDBFormInline,MDBView } from "mdbreact";
 import { MDBCheckbox } from 'mdb-react-ui-kit'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
@@ -17,7 +17,7 @@ const  UploadCV = () => {
   const [emailLinkedinProfile, setEmailLinkedinProfile] = useState();
   const [uploadFile, setUploadFile]            = useState();
   const [contactNumber, setContactNumber]     = useState();
- 
+  const [apiReply, setApiReply]               = useState(false);              
 
 
   const submitForm = (event) => {
@@ -39,20 +39,68 @@ const  UploadCV = () => {
           "Content-Type": "multipart/form-data"
         }
       })
+      .then(response => {
+
+        return response
+     })
       .then((response) => {
-        // successfully uploaded response
-        console.log(response)
-      })
+        console.log(response.request.status)
+        if (response.request.status === 200) 
+      { 
+         setApiReply(true)}
+
+      else 
+      {
+         setApiReply(false)
+      }
+
+      }) 
       .catch((error) => {
         // error response
       });
 
-      console.log (contactNumber  )
   };
+if (apiReply) return (
+  <MDBContainer>
+  <MDBRow >
+    
+    <MDBCol lg="12" className="lg-0 mb-10 text-left my-5">
+
+    <MDBCard >
+
+    <MDBCardBody>
+    <MDBView  >            
+     
+     <img src = {require('../images/ooze.PNG')  } style={{ textAlign: 'center', 
+                                    marginLeft:'auto', display : 'block',
+                                     marginRight:'auto'} } alt='mix_photo'/> <br/>
+    </MDBView>
+        
+
+      <p style = {{ textAlign: 'center', marginLeft:'auto', 
+                    marginRight:'auto', fontSize : '17px', color :'#364a61'}}>
+                    Tack för ditt intresse ! <br/>
+                    Vi kommer att återkoppla till dig om vi anser att bifogad profil är intressant för uppdraget.<br/>
+                    Om vi inte hörs vidare så önskar jag dig lycka till i framtiden!</p>
+
+      </MDBCardBody>
+
+      </MDBCard >
+
+      </MDBCol>
+
+      </MDBRow >
+        
+      </MDBContainer>
+
+  )
+
 
   return (
     <React.Fragment> 
+      
        <form onSubmit={submitForm}>
+        
       <MDBContainer>
       <MDBRow >
         
@@ -99,14 +147,13 @@ const  UploadCV = () => {
         <br />
 
         <PhoneInput
-          country={"se"}
-          value={contactNumber}
+         value={contactNumber}
           onChange={ setContactNumber } />
 
 
         <br/><br/>
 
-        <input type="file" 
+        <input type="file"  required="required"
         className="form-control-file"
         onChange={(e) => setUploadFile(e.target.files[0])} />
         <br/> 
@@ -116,17 +163,17 @@ const  UploadCV = () => {
              border : '1px solid gainsboro', padding :'10px'}}>
       <MDBFormInline>
 
-      <MDBCheckbox  name='flexCheck' value=''  label='* Jag accepterar GDPR och OOZE AB allmänna villkor.' />
+      <MDBCheckbox   required="required"  name='flexCheck' value=''  label='* Jag accepterar GDPR och OOZE AB allmänna villkor.' />
 
 
       </MDBFormInline>
       </div>
 
-      <br/> <br/> <br/> 
+          <br/> <br/> <br/> 
         <div className="text-center">
               <MDBBtn color="info" type="submit">
-            Skicka
-          </MDBBtn>
+                Skicka
+              </MDBBtn>
         </div>
 
       </MDBCardBody>
@@ -139,6 +186,7 @@ const  UploadCV = () => {
         
       </MDBContainer>
       </form>
+
 </React.Fragment> 
   );
 
