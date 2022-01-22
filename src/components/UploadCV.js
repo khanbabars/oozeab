@@ -71,9 +71,9 @@ if (apiReply) return (
     <MDBCardBody>
     <MDBView  >            
      
-     <img src = {require('../images/ooze.PNG')  } style={{ textAlign: 'center', 
+     <img src = {require('../images/tick.gif')  } style={{ textAlign: 'center', 
                                     marginLeft:'auto', display : 'block',
-                                     marginRight:'auto'} } alt='mix_photo'/> <br/>
+                                     marginRight:'auto', width : '50%'} } alt='tick_photo'/> <br/>
     </MDBView>
         
 
@@ -170,11 +170,16 @@ if (apiReply) return (
       </div>
 
           <br/> <br/> <br/> 
+          
         <div className="text-center">
               <MDBBtn color="info" type="submit">
                 Skicka
               </MDBBtn>
         </div>
+{/* 
+        <div>
+      <input type="checkbox" />
+    </div> */}
 
       </MDBCardBody>
 
@@ -185,6 +190,8 @@ if (apiReply) return (
       </MDBRow >
         
       </MDBContainer>
+
+      
       </form>
 
 </React.Fragment> 
