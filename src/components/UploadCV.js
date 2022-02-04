@@ -16,9 +16,15 @@ const  UploadCV = () => {
   const [emailAddress, setEmailAddress]       = useState();
   const [emailLinkedinProfile, setEmailLinkedinProfile] = useState();
   const [uploadFile, setUploadFile]            = useState();
-  const [contactNumber, setContactNumber]     = useState();
-  const [apiReply, setApiReply]               = useState(false);              
+  const [contactNumber, setContactNumber]     = useState('46'); //default country code
+  const [apiReply, setApiReply]               = useState(false);        
+  const [termAgree, setTermAgree]              =useState(true);  
 
+
+  const checkboxHandler= () => {
+     
+    setTermAgree(!termAgree);
+    }
 
   const submitForm = (event) => {
     event.preventDefault();
@@ -71,9 +77,9 @@ if (apiReply) return (
     <MDBCardBody>
     <MDBView  >            
      
-     <img src = {require('../images/tick.gif')  } style={{ textAlign: 'center', 
+     <img src = {require('../images/mix.jpg')  } style={{ textAlign: 'center', 
                                     marginLeft:'auto', display : 'block',
-                                     marginRight:'auto', width : '50%'} } alt='tick_photo'/> <br/>
+                                     marginRight:'auto', width : '30%'} } alt='tick_photo'/> <br/>
     </MDBView>
         
 
@@ -147,8 +153,11 @@ if (apiReply) return (
         <br />
 
         <PhoneInput
+         country = 'se' 
+         fullWidth="true"
+         masks={{se: '... ... ... .........'}}
          value={contactNumber}
-          onChange={ setContactNumber } />
+         onChange={ setContactNumber } />
 
 
         <br/><br/>
@@ -163,7 +172,7 @@ if (apiReply) return (
              border : '1px solid gainsboro', padding :'10px'}}>
       <MDBFormInline>
 
-      <MDBCheckbox   required="required"  name='flexCheck' value=''  label='* Jag accepterar GDPR och OOZE AB allmänna villkor.' />
+      <MDBCheckbox onChange={checkboxHandler}  name='flexCheck' value=''  label='* Jag accepterar GDPR och OOZE AB allmänna villkor.' />
 
 
       </MDBFormInline>
@@ -172,7 +181,7 @@ if (apiReply) return (
           <br/> <br/> <br/> 
           
         <div className="text-center">
-              <MDBBtn color="info" type="submit">
+              <MDBBtn color="info" type="submit" disabled = {termAgree}>
                 Skicka
               </MDBBtn>
         </div>
