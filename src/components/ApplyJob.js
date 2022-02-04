@@ -104,7 +104,7 @@ alt='logo_photo_assigment' />
    
       
    
-       <UploadCV/>
+       <UploadCV projectProps={assignment.items }/>  
        <br/>    <br/> <br/>    <br/> 
        
        <Footer/>

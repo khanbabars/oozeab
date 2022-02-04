@@ -7,12 +7,10 @@ import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import { useState } from "react";
 
-const  UploadCV = () => {
+const  UploadCV = ({projectProps}) => {
 
   const [firstName, setFirstName]             = useState();
   const [lastName, setLastName]               = useState();
-  const [projectName, setProjectName]         = useState();
-  const [projectSupplier, setProjectSupplier] = useState();
   const [emailAddress, setEmailAddress]       = useState();
   const [emailLinkedinProfile, setEmailLinkedinProfile] = useState();
   const [uploadFile, setUploadFile]            = useState();
@@ -32,8 +30,8 @@ const  UploadCV = () => {
     const dataArray = new FormData();
     dataArray.append("first_name", firstName);
     dataArray.append("last_name",  lastName);
-    dataArray.append("project_name", 'project');
-    dataArray.append("project_supplier", 'Uppgraded'); 
+    dataArray.append("project_name", projectProps[0].project_heading);
+    dataArray.append("project_supplier", projectProps[0].consultant_company); 
     dataArray.append("email_address", emailAddress);
     dataArray.append("linkedin_profile", emailLinkedinProfile);
     dataArray.append("contact_number", contactNumber);  
@@ -50,7 +48,7 @@ const  UploadCV = () => {
         return response
      })
       .then((response) => {
-        console.log(response.request.status)
+      //  console.log(response.request.status)
         if (response.request.status === 200) 
       { 
          setApiReply(true)}
