@@ -42,7 +42,8 @@ create table recevie_application
    email_address                        varchar2(1000),
    linkedin_profile                     varchar(1000),
    resume                               blob,
-   motivation_letter                    blob
+   motivation_letter                    blob,
+   project_id                           number
 );
 
 

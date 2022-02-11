@@ -114,7 +114,7 @@ static getDerivedStateFromProps(nextProps, state)
    
      
  </React.Fragment>) }}}
- 
+ // eslint-disable-next-line
  const ApplyButton=({item, event, text, showLess,ids})=>{
      if(ids.includes(+item.project_id)){
 
@@ -125,6 +125,7 @@ static getDerivedStateFromProps(nextProps, state)
  async function fetchData(state){      
   const response = await fetch(state.url); //fetch
   const data = await response.json();
+  // eslint-disable-next-line no-empty-pattern
   const content=[]  = data.items //assign items to content array
   const item =  content||[]
   return item }   //return items 

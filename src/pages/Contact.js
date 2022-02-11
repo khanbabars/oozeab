@@ -29,9 +29,13 @@ export default class  Contact extends Component {
 
 render() {
   return (
+
+    
     <div>
+
+      
     < form onSubmit={this.ContactSubmit} className="my-5" style={{ align:'center'}}>
-      <MDBContainer>
+      <MDBContainer  >
       <MDBRow >
         
         <MDBCol lg="12" className="lg-0 mb-12 text-left my-5">
@@ -39,7 +43,7 @@ render() {
             
           <MDBCard >
 
-            <MDBCardBody>
+            <MDBCardBody >
 
               <MDBView  >            
      
@@ -124,8 +128,12 @@ render() {
       </MDBRow>
         
       <br/>
-              <p  style={{ textAlign: 'center'}}>info@oozeab.se<br/>+46700679299</p>         
+              <p  style={{ textAlign: 'center'}}>info@oozeab.se<br/>+46700679299</p>       
+              
+                
+                
       </MDBContainer>
+
 
 </ form>
  </div>

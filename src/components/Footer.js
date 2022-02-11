@@ -1,5 +1,6 @@
 import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import { LinkedinIcon} from "react-share";
 
 const Footer = () => {
   return (
@@ -7,26 +8,32 @@ const Footer = () => {
     <MDBFooter className="font-small pt-4 mt-4">
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
-          <MDBCol md="6">
-            <h5 className="title">Footer Content</h5>
-            <p>
-              Here you can use rows and columns here to organize your footer
-              content.
-            </p>
-          </MDBCol>
-          <MDBCol md="6">
-            <h5 className="title">Links</h5>
-            <ul>
-              <li className="list-unstyled">
-                <a href="#!">Link 1</a>
-              </li>
+          <MDBCol  md="10">
           
-            </ul>
+          {/* <p>
+          info@oozeab.se <br/>
+          0700679299
+        
+            </p> */}
+         
+          
+          </MDBCol>
+          <MDBCol md="2">
+         
           </MDBCol>
         </MDBRow>
       </MDBContainer>
       <div className="footer-copyright text-center py-3">
-        <MDBContainer fluid>
+        <MDBContainer fluid> <p style = {{fontSize:'22px'}}>
+        
+        <a href="https://se.linkedin.com/company/ooze-ab" target="_blank"   rel="noopener noreferrer">
+          <div style = {{fontSize:'14px' ,color : 'white'}}> följa oss på <LinkedinIcon  size={35}  /> </div> </a></p> 
+    
+          <p style = {{fontSize:'15px'}}>
+
+          uppdrag@oozeab.se | 0700679299</p>
+       
+    <hr/>
           &copy; {new Date().getFullYear()}  Ooze AB 
         </MDBContainer>
       </div>

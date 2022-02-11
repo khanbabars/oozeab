@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import {OOZE_RECEIVE_CONSULTANT_RESUME} from '../cache/api'
-import { MDBRow, MDBCol, MDBCard, MDBCardBody, MDBBtn, MDBInput,MDBContainer, MDBFormInline,MDBView } from "mdbreact";
+import { MDBRow, MDBCol, MDBCard, MDBCardBody, MDBBtn, MDBInput,MDBContainer,MDBView } from "mdbreact";
 import { MDBCheckbox } from 'mdb-react-ui-kit'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
@@ -32,6 +32,7 @@ const  UploadCV = ({projectProps}) => {
     dataArray.append("last_name",  lastName);
     dataArray.append("project_name", projectProps[0].project_heading);
     dataArray.append("project_supplier", projectProps[0].consultant_company); 
+    dataArray.append("project_id", projectProps[0].project_id);
     dataArray.append("email_address", emailAddress);
     dataArray.append("linkedin_profile", emailLinkedinProfile);
     dataArray.append("contact_number", contactNumber);  
@@ -104,15 +105,15 @@ if (apiReply) return (
     <React.Fragment> 
       
        <form onSubmit={submitForm}>
-        
-      <MDBContainer>
+      
+       <div className="container">
       <MDBRow >
-        
+     
         <MDBCol lg="12" className="lg-0 mb-10 text-left my-5">
     
-        <MDBCard >
+        <MDBCard style={{fontWeight : 'bold' }}>
 
-        <MDBCardBody>
+        <MDBCardBody >
 
         <p style={{   textAlign: 'center', marginLeft:'auto', 
         marginRight:'auto', fontWeight : 'bold', fontSize : '22px', color :'#364a61'}}>Ansök</p>
@@ -168,12 +169,12 @@ if (apiReply) return (
       
         <div style = {{ fontSize : '15px', color :'#364a61',  
              border : '1px solid gainsboro', padding :'10px'}}>
-      <MDBFormInline>
+    
 
-      <MDBCheckbox onChange={checkboxHandler}  name='flexCheck' value=''  label='* Jag accepterar GDPR och OOZE AB allmänna villkor.' />
+<MDBCheckbox onChange={checkboxHandler}  name='flexCheck' value=''  label='* Jag accepterar GDPR och OOZE AB allmänna villkor.' />
 
 
-      </MDBFormInline>
+
       </div>
 
           <br/> <br/> <br/> 
@@ -193,12 +194,13 @@ if (apiReply) return (
       </MDBCard >
 
       </MDBCol>
+  
 
       </MDBRow >
         
-      </MDBContainer>
-
-      
+      </div>
+ 
+ 
       </form>
 
 </React.Fragment> 

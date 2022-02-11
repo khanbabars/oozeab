@@ -40,7 +40,8 @@ export const ApplyJob = (props) => {
             }
           })
         return () => mounted = false;
-      }, [])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, []);
 
     return (
 
@@ -63,7 +64,7 @@ alt='logo_photo_assigment' />
 <hr/>
  <h3>&nbsp;&nbsp;{assignment.items && assignment.items[0].project_heading}</h3>
  <p style = {{ fontSize:'11px', textAlign:'left', paddingLeft:'25px'}}>
- <a href="https://upgraded.se/" target="_blank">{assignment.items && assignment.items[0].consultant_company}</a></p>
+ <a href="https://upgraded.se/" target="_blank" rel="noopener noreferrer">{assignment.items && assignment.items[0].consultant_company}</a></p>
       <hr/>
 
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b style= {{ fontSize:'13px', borderRadius: '25px', color:'white', backgroundColor:'#17a2b8', padding : '5px'}}>{assignment.items && assignment.items[0].project_location}</b>  
