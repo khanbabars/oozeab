@@ -1,5 +1,6 @@
 import React from 'react'
 import { MDBContainer } from 'mdbreact';
+import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBRow,MDBCol } from 'mdb-react-ui-kit';
 
 
 
@@ -8,10 +9,52 @@ export const Aboutus = () => { return(
     <MDBContainer className="text-left my-5">
    
         <div>
-        <br/><br/><br/>
+        
         <h2>Våra tjänster</h2>
-            <p style={{ paddingTop: '10px',fontSize: '24px', color: 'black', display: 'inline-block', textAlign:'center'}}>
-           <br/>
+            <p style={{ paddingTop: '10px',fontSize: '18px', color: 'black', display: 'inline-block', 
+            textAlign:'center'}}>
+           <br/>  <br/>
+
+           <MDBRow>
+      <MDBCol sm='4'>
+        <MDBCard>
+          <MDBCardBody>
+            <MDBCardTitle>Special title treatment</MDBCardTitle>
+            <MDBCardText>
+              With supporting text below as a natural lead-in to additional content.
+            </MDBCardText>
+            {/* <MDBBtn href='#'>Go somewhere</MDBBtn> */}
+          </MDBCardBody>
+        </MDBCard>
+      </MDBCol>
+
+      <MDBCol sm='4'>
+        <MDBCard>
+          <MDBCardBody>
+            <MDBCardTitle>Special title treatment</MDBCardTitle>
+            <MDBCardText>
+              With supporting text below as a natural lead-in to additional content.
+            </MDBCardText>
+            {/* <MDBBtn href='#'>Go somewhere</MDBBtn> */}
+          </MDBCardBody>
+        </MDBCard>
+      </MDBCol>
+      
+
+      <MDBCol sm='4'>
+        <MDBCard>
+          <MDBCardBody>
+            <MDBCardTitle>Special title treatment</MDBCardTitle>
+            <MDBCardText>
+              With supporting text below as a natural lead-in to additional content.
+            </MDBCardText>
+            {/* <MDBBtn href='#'>Go somewhere</MDBBtn> */}
+          </MDBCardBody>
+        </MDBCard>
+      </MDBCol>
+
+    </MDBRow>
+    <br/><br/>
 Vi hjälper er att lyckas med era digitala satsningar genom att utveckla lösningar specifikt för er verksamhet. Hemsidor, interna system, digitala betallösningar, affärssystem samt Android- & iOS-appar är exempel på lösningar som vi levererat. Vi erbjuder även förvaltning och underhåll av nya och befintliga system.
             <br/>
 Vi vill gärna jobba med dig!
@@ -23,6 +66,8 @@ Vi gör digitaliseringen enkel.
    
 
 <br/><br/>
+
+  
 <br/><br/><br/> <br/>
 
 

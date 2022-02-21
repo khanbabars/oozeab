@@ -23,9 +23,10 @@ export const Konsultuppdrag = ({browseAssignment}) => {
   <hr/>  
         <br/>
         &nbsp;&nbsp; <Assignments browseAssignment={browseAssignment}/> 
+        <br/> <br/>      <br/> <br/>
         <img src={services} alt={"services"} /><br/>
         
-        <br/> <br/>      <br/> <br/>      <br/> <br/>      <br/> <br/>      <br/> <br/>      <br/> <br/>
+        <br/> <br/>           <br/> <br/>   
 
         </div>
         </MDBContainer>

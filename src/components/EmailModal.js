@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useCallback } from 'react';
 import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
+import { MDBRow, MDBCol, MDBCard, MDBCardBody, MDBBtn, MDBInput,MDBContainer,MDBView } from "mdbreact";
 
 const Background = styled.div`
   width: 100%;
@@ -112,9 +113,79 @@ export const EmailModal = ({ showModal, setShowModal }) => {
             <ModalWrapper showModal={showModal}>
               <ModalImg src={require('../images/white.jpg')} alt='camera' />
               <ModalContent>
-                <h1>Are you ready?</h1>
-                <p>Get exclusive access to our next launch.</p>
-                <button>skicka</button>
+      
+             
+              <h1>Are you ready?</h1>
+              
+      
+      <form >
+     
+      <div className="container">
+     <MDBRow >
+    
+       <MDBCol lg="12" className="lg-0 mb-10 text-left my-5">
+   
+       <MDBCard style={{fontWeight : 'bold' }}>
+
+       <MDBCardBody >
+
+       <p style={{   textAlign: 'center', marginLeft:'auto', 
+       marginRight:'auto', fontWeight : 'bold', fontSize : '22px', color :'#364a61'}}>Ansök</p>
+
+     <div className="md-form">
+       <MDBInput
+      
+         hint="Förnamn *"
+         required/>
+       </div>
+       <br /> 
+
+     <div className="md-form">
+       <MDBInput
+
+         hint="Efternamn *"
+         required/>
+      </div>
+      <br />
+       
+       
+     <div className="md-form">
+       <MDBInput
+         type='email'
+     
+         hint="E-postadress *"
+         required/>
+       </div>
+       <br />
+
+
+
+       <br/><br/>
+
+
+         <br/> <br/> <br/> 
+    
+{/* 
+       <div>
+     <input type="checkbox" />
+   </div> */}
+
+     </MDBCardBody>
+
+     </MDBCard >
+
+     </MDBCol>
+ 
+
+     </MDBRow >
+       
+     </div>
+
+
+     </form>
+
+
+
               </ModalContent>
               <CloseModalButton
                 aria-label='Close modal'

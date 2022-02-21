@@ -126,10 +126,7 @@ render() {
           </MDBRow>
         </MDBCol>
       </MDBRow>
-        
-      <br/>
-              <p  style={{ textAlign: 'center'}}>info@oozeab.se<br/>+46700679299</p>       
-              
+   
                 
                 
       </MDBContainer>

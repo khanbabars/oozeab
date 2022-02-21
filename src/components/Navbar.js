@@ -56,18 +56,6 @@ export default class Navbar extends Component {
               </Link>
             </li>
 
-            <li >
-
-<Link
-  
-  to="/#kunder"
-  smooth={true}
-  offset={-70}
-  duration={100}>
-
-<p style={{ paddingTop: '20px',fontSize: '20px', fontWeight: '400', color: '#434952', paddingLeft: '50px'}} >För kunder</p>
-</Link>
-</li>
 
 
             <li >
