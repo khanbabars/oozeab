@@ -48,4 +48,14 @@ create table recevie_application
 
 
 
+
+create table email_subscription (
+     email_subscription_id       number generated always as identity
+    ,created                       date default sysdate
+    ,name                varchar2(1000)
+    ,email_address       varchar2(1000)
+    ,email_subscription_status varchar2(1)
+);
+
+
 ---------------------------------------

@@ -11,11 +11,9 @@ export const Aboutus = () => { return(
         <div>
         
         <h2>Våra tjänster</h2>
-            <p style={{ paddingTop: '10px',fontSize: '18px', color: 'black', display: 'inline-block', 
-            textAlign:'center'}}>
-           <br/>  <br/>
-
-           <MDBRow>
+        <br/>
+        <br/><br/>
+        <MDBRow>
       <MDBCol sm='4'>
         <MDBCard>
           <MDBCardBody>
@@ -54,7 +52,11 @@ export const Aboutus = () => { return(
       </MDBCol>
 
     </MDBRow>
-    <br/><br/>
+    
+            <p style={{ paddingTop: '10px',fontSize: '18px', color: 'black', display: 'inline-block', 
+            textAlign:'left'}}>
+           <br/>  <br/>
+
 Vi hjälper er att lyckas med era digitala satsningar genom att utveckla lösningar specifikt för er verksamhet. Hemsidor, interna system, digitala betallösningar, affärssystem samt Android- & iOS-appar är exempel på lösningar som vi levererat. Vi erbjuder även förvaltning och underhåll av nya och befintliga system.
             <br/>
 Vi vill gärna jobba med dig!

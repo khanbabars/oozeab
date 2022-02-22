@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useCallback } from 'react';
 import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
-import { MDBRow, MDBCol, MDBCard, MDBCardBody, MDBBtn, MDBInput,MDBContainer,MDBView } from "mdbreact";
+import { MDBRow, MDBCol, MDBCardBody, MDBBtn, MDBInput } from "mdbreact";
 
 const Background = styled.div`
   width: 100%;
@@ -15,8 +15,8 @@ const Background = styled.div`
 `;
 
 const ModalWrapper = styled.div`
-  width: 700px;
-  height: 800px;
+  width: 1000px;
+  height: 650px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   background: #fff;
   color: #000;
@@ -37,7 +37,6 @@ const ModalImg = styled.img`
 `;
 
 const ModalContent = styled.div`
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -91,7 +90,7 @@ export const EmailModal = ({ showModal, setShowModal }) => {
     e => {
       if (e.key === 'Escape' && showModal) {
         setShowModal(false);
-        console.log('I pressed');
+       // console.log('I pressed');
       }
     },
     [setShowModal, showModal]
@@ -111,42 +110,28 @@ export const EmailModal = ({ showModal, setShowModal }) => {
         <Background onClick={closeModal} ref={modalRef}>
           <animated.div style={animation}>
             <ModalWrapper showModal={showModal}>
-              <ModalImg src={require('../images/white.jpg')} alt='camera' />
-              <ModalContent>
-      
-             
-              <h1>Are you ready?</h1>
+        
+              <ModalImg src={require('../images/diego.jpg')} alt='camera' />
               
-      
+              <ModalContent>
+              <br/>  <br/> <br/> <br/> 
+              <h1>&nbsp;&nbsp;Prenumerera</h1>    
       <form >
      
-      <div className="container">
+      <div >
      <MDBRow >
     
-       <MDBCol lg="12" className="lg-0 mb-10 text-left my-5">
-   
-       <MDBCard style={{fontWeight : 'bold' }}>
+       <MDBCol className="lg-12 mb-10 text-left my-5">
 
        <MDBCardBody >
-
-       <p style={{   textAlign: 'center', marginLeft:'auto', 
-       marginRight:'auto', fontWeight : 'bold', fontSize : '22px', color :'#364a61'}}>Ansök</p>
-
      <div className="md-form">
+
        <MDBInput
       
-         hint="Förnamn *"
+         hint="Namn *"
          required/>
        </div>
-       <br /> 
-
-     <div className="md-form">
-       <MDBInput
-
-         hint="Efternamn *"
-         required/>
-      </div>
-      <br />
+    
        
        
      <div className="md-form">
@@ -156,23 +141,18 @@ export const EmailModal = ({ showModal, setShowModal }) => {
          hint="E-postadress *"
          required/>
        </div>
-       <br />
-
-
-
-       <br/><br/>
-
-
-         <br/> <br/> <br/> 
+       <br/> 
+          
+          <div className="text-center">
+                <MDBBtn color="info" type="submit">
+                  Skicka
+                </MDBBtn>
+          </div>
     
-{/* 
-       <div>
-     <input type="checkbox" />
-   </div> */}
 
      </MDBCardBody>
 
-     </MDBCard >
+ 
 
      </MDBCol>
  

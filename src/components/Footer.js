@@ -24,10 +24,12 @@ const Footer = () => {
         </MDBRow>
       </MDBContainer>
       <div className="footer-copyright text-center py-3">
-        <MDBContainer fluid> <p style = {{fontSize:'22px'}}>
+        <MDBContainer fluid> <div style = {{fontSize:'22px'}}>
         
         <a href="https://se.linkedin.com/company/ooze-ab" target="_blank"   rel="noopener noreferrer">
-          <div style = {{fontSize:'14px' ,color : 'white'}}> följa oss på <LinkedinIcon  size={35}  /> </div> </a></p> 
+          <div style = {{fontSize:'14px' ,color : 'white'}}> följa oss på <LinkedinIcon  size={35}  /> </div> 
+          
+          </a></div> 
     
           <p style = {{fontSize:'15px'}}>
 

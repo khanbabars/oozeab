@@ -79,7 +79,7 @@ export default class Navbar extends Component {
                 duration={100}
                
               >
-                <p style={{paddingTop: '20px', fontSize: '20px', fontWeight: '400', color: '#434952'}} > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kontakt</p>
+                <p style={{paddingTop: '20px', fontSize: '20px', fontWeight: '400', color: '#434952'}} > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kontakta oss</p>
               </Link>
             </li>
             {/* <li >
