@@ -3,6 +3,10 @@ import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 import { MDBRow, MDBCol, MDBCardBody, MDBBtn, MDBInput } from "mdbreact";
+import axios from "axios";
+import { useState } from "react";
+import {OOZE_EMAIL_SUBSCRIPTION} from '../cache/api'
+
 
 const Background = styled.div`
   width: 100%;
@@ -69,7 +73,53 @@ const CloseModalButton = styled(MdClose)`
   
 `;
 
+
+
 export const EmailModal = ({ showModal, setShowModal }) => {
+
+
+  const [apiReply, setApiReply]               = useState(false);  
+  const [name, setName]             = useState();
+  const [emailAddress, setEmailAddress]               = useState();
+
+  const submitForm = (event) => {
+    event.preventDefault();
+
+    const dataArray = new FormData();
+     dataArray.append("name", name);
+     dataArray.append("email_address",  emailAddress);
+    
+
+    axios
+      .post(OOZE_EMAIL_SUBSCRIPTION, dataArray, {
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
+      })
+      .then(response => {
+
+        return response
+     })
+      .then((response) => {
+      //  console.log(response.request.status)
+        if (response.request.status === 200) 
+      { 
+         setApiReply(true)}
+
+      else 
+      {
+         setApiReply(false)
+      }
+
+      }) 
+      .catch((error) => {
+        // error response
+      });
+
+  }; 
+
+
+
   const modalRef = useRef();
 
   const animation = useSpring({
@@ -103,6 +153,8 @@ export const EmailModal = ({ showModal, setShowModal }) => {
     },
     [keyPress]
   );
+
+
 
   return (
     <>
