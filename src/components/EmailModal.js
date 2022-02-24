@@ -77,10 +77,9 @@ const CloseModalButton = styled(MdClose)`
 
 export const EmailModal = ({ showModal, setShowModal }) => {
 
-
-  const [apiReply, setApiReply]               = useState(false);  
-  const [name, setName]             = useState();
-  const [emailAddress, setEmailAddress]               = useState();
+  const [ apiName,setApiReply]              = useState(false);  
+  const [name, setName]                     = useState();
+  const [emailAddress, setEmailAddress]     = useState();
 
   const submitForm = (event) => {
     event.preventDefault();
@@ -88,8 +87,7 @@ export const EmailModal = ({ showModal, setShowModal }) => {
     const dataArray = new FormData();
      dataArray.append("name", name);
      dataArray.append("email_address",  emailAddress);
-    
-
+     
     axios
       .post(OOZE_EMAIL_SUBSCRIPTION, dataArray, {
         headers: {
@@ -104,8 +102,10 @@ export const EmailModal = ({ showModal, setShowModal }) => {
       //  console.log(response.request.status)
         if (response.request.status === 200) 
       { 
-         setApiReply(true)}
-
+         setApiReply(true)
+         setShowModal(false)
+        }
+         
       else 
       {
          setApiReply(false)
@@ -118,7 +118,7 @@ export const EmailModal = ({ showModal, setShowModal }) => {
 
   }; 
 
-
+ 
 
   const modalRef = useRef();
 
@@ -131,9 +131,9 @@ export const EmailModal = ({ showModal, setShowModal }) => {
   });
 
   const closeModal = e => {
-    if (modalRef.current === e.target) {
+    if (modalRef.current === e.target ) {
       setShowModal(false);
-    }
+   }
   };
 
   const keyPress = useCallback(
@@ -167,8 +167,10 @@ export const EmailModal = ({ showModal, setShowModal }) => {
               
               <ModalContent>
               <br/>  <br/> <br/> <br/> 
-              <h1>&nbsp;&nbsp;Prenumerera</h1>    
-      <form >
+              <h1>&nbsp;&nbsp;Prenumerera</h1>
+              <p style = {{ fontSize: '15px', marginLeft:'25px' }}>Prenumerera för att få uppdrags förfrågningar på mejl</p> 
+
+      <form  onSubmit={submitForm} >
      
       <div >
      <MDBRow >
@@ -176,33 +178,31 @@ export const EmailModal = ({ showModal, setShowModal }) => {
        <MDBCol className="lg-12 mb-10 text-left my-5">
 
        <MDBCardBody >
-     <div className="md-form">
+   
 
        <MDBInput
-      
+         onChange={(e) => setName(e.target.value)}
          hint="Namn *"
          required/>
-       </div>
+     
     
        
        
-     <div className="md-form">
+   
        <MDBInput
          type='email'
-     
+         onChange={(e) => setEmailAddress(e.target.value)}
          hint="E-postadress *"
          required/>
-       </div>
+     
        <br/> 
           
           <div className="text-center">
-                <MDBBtn color="info" type="submit">
+                <MDBBtn color="info" type="submit" onClick={ closeModal }>
                   Skicka
                 </MDBBtn>
           </div>
-    
-
-     </MDBCardBody>
+        </MDBCardBody>
 
  
 
@@ -227,6 +227,7 @@ export const EmailModal = ({ showModal, setShowModal }) => {
           </animated.div>
         </Background>
       ) : null}
+   
     </>
   );
 };
