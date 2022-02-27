@@ -35,8 +35,9 @@ setstate({ switchRoute : true})
    <Navigationbar/>
    <Jumbotron/> 
        <Page   id="hem"/> 
-       <Page   id="konsultuppdrag" browseAssignment={browseAssignment}/>
+       <Page   id="Om"/> 
        <Page   id="tjanster"/>
+       <Page   id="konsultuppdrag" browseAssignment={browseAssignment}/>
        <Page   id="kontakt"/>   
       </Provider>   
       <Footer/>

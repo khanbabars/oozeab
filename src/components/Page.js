@@ -1,9 +1,9 @@
 import React from "react";
 import {Home} from '../pages/home'
 import {Konsultuppdrag} from '../pages/Konsultuppdrag'
-import {Aboutus} from '../pages/Aboutus'
+import {Services} from '../pages/Services'
 import Contact from '../pages/Contact'
-
+import {About} from '../pages/About'
 
 export default function Page({ id,browseAssignment }) {
   return (
@@ -17,7 +17,10 @@ export default function Page({ id,browseAssignment }) {
           return <Konsultuppdrag browseAssignment={browseAssignment}/>;
         } 
         else if (id === 'tjanster'){
-          return <Aboutus />;
+          return <Services />;
+        }
+        else if (id === 'Om'){
+          return <About />;
         }
         else if (id === 'kontakt'){
             return <Contact />;

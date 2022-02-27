@@ -43,6 +43,33 @@ export default class Navbar extends Component {
 <p style={{ paddingTop: '10px', height: '40px', width: '50px', paddingRight: '100px'}} > <img src={logo} alt='logo_photo'/></p>
 </Link>&nbsp;
 </li>
+
+
+<li >
+              <Link
+                
+                to="/#Om"
+                smooth={true}
+                offset={-70}
+                duration={100}
+              
+              >
+                <p style={{ paddingTop: '20px', fontSize: '20px', fontWeight: '400', color: '#434952'}} >&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Om oss</p>
+              </Link>
+            </li>
+
+<li >
+              <Link
+                
+                to="/#tjanster"
+                smooth={true}
+                offset={-70}
+                duration={100}
+              
+              >
+                <p style={{ paddingTop: '20px', fontSize: '20px', fontWeight: '400', color: '#434952'}} >&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Tjänster</p>
+              </Link>
+            </li>
 <li >
 
               <Link
@@ -57,19 +84,6 @@ export default class Navbar extends Component {
             </li>
 
 
-
-            <li >
-              <Link
-                
-                to="/#tjanster"
-                smooth={true}
-                offset={-70}
-                duration={100}
-              
-              >
-                <p style={{ paddingTop: '20px', fontSize: '20px', fontWeight: '400', color: '#434952'}} >&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Tjänster</p>
-              </Link>
-            </li>
             <li >
               <Link
                 

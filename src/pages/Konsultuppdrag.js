@@ -1,7 +1,6 @@
 import React from 'react';
 import { MDBContainer } from 'mdbreact';
 // import AboutText from '../blogs/about'
-import services from '../images/services.PNG';
 import Assignments from '../api/Assignments';
 
 
@@ -24,9 +23,8 @@ export const Konsultuppdrag = ({browseAssignment}) => {
         <br/>
         &nbsp;&nbsp; <Assignments browseAssignment={browseAssignment}/> 
         <br/> <br/>      <br/> <br/>
-        <img src={services} alt={"services"} /><br/>
-        
-        <br/> <br/>           <br/> <br/>   
+     
+
 
         </div>
         </MDBContainer>

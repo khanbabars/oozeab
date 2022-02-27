@@ -77,7 +77,7 @@ const CloseModalButton = styled(MdClose)`
 
 export const EmailModal = ({ showModal, setShowModal }) => {
 
-  const [ apiName,setApiReply]              = useState(false);  
+  const [ apiReply,setApiReply]              = useState(false);  
   const [name, setName]                     = useState();
   const [emailAddress, setEmailAddress]     = useState();
 
@@ -155,8 +155,8 @@ export const EmailModal = ({ showModal, setShowModal }) => {
   );
 
 
-
-  return (
+  if (!apiReply)
+  return ( 
     <>
       {showModal ? (
         <Background onClick={closeModal} ref={modalRef}>
