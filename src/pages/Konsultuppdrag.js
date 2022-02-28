@@ -1,6 +1,5 @@
 import React from 'react';
 import { MDBContainer } from 'mdbreact';
-// import AboutText from '../blogs/about'
 import Assignments from '../api/Assignments';
 
 
