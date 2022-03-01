@@ -7,6 +7,7 @@ import {CookieConsentPage} from './components/CookieConsentPage'
 import {Jumbotron} from './jumbotron'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ApplyJob } from './components/ApplyJob';    
+import { Terms } from './pages/Terms';    
 import Footer from './components/Footer'  
 
 
@@ -50,7 +51,9 @@ return (
 
   <Switch>
   <Route path='/' component={Main} exact={true}/>
+  <Route path='/Villkor' component={Terms} />
     <Route path='/:ApplyJob' component={ApplyJob} exact={true} />
+    
     </Switch>
       </Router>
   </React.Fragment>);}

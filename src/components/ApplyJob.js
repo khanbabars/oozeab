@@ -2,6 +2,7 @@ import React, { useState, useEffect }  from 'react'
 import { NavLink } from 'react-router-dom'
 import logos from '../images/ooze.PNG';
 import {API_ASSIGNMENT_DETAIL, OOZE_SITE_ADDRESS} from '../cache/api'
+import {CookieConsentPage} from '../components/CookieConsentPage'
 import Footer from '../components/Footer'
 
 
@@ -107,7 +108,7 @@ alt='logo_photo_assigment' />
    
        <UploadCV projectProps={assignment.items }/>  
        <br/>    <br/> <br/>    <br/> 
-       
+       <CookieConsentPage/>
        <Footer/>
        </React.Fragment>
         

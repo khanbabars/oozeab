@@ -130,6 +130,19 @@ Vi gör digitaliseringen enkel.
       <MDBCol sm='4'>
         <MDBCard>
           <MDBCardBody>
+            <MDBCardTitle> Kandidat intervju</MDBCardTitle>
+            <MDBCardText>
+            Vi kan hjälpa till med bokföring 
+            </MDBCardText>
+            {/* <MDBBtn href='#'>Go somewhere</MDBBtn> */}
+          </MDBCardBody>
+        </MDBCard>
+      </MDBCol>
+
+
+      <MDBCol sm='4'>
+        <MDBCard>
+          <MDBCardBody>
             <MDBCardTitle> Bokföring, fakturering och finansiella tjänster</MDBCardTitle>
             <MDBCardText>
             Vi kan hjälpa till med bokföring 

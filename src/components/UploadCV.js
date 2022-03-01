@@ -171,9 +171,9 @@ if (apiReply) return (
              border : '1px solid gainsboro', padding :'10px'}}>
     
 
-<MDBCheckbox onChange={checkboxHandler}  name='flexCheck' value=''  label='* Jag accepterar GDPR och OOZE AB allmänna villkor.' />
+<MDBCheckbox onChange={checkboxHandler}  name='flexCheck' value='' />
 
-
+<a  href="/Villkor">Jag accepterar GDPR och OOZE AB allmänna villkor </a>
 
       </div>
 
