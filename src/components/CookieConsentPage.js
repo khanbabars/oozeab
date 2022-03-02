@@ -21,7 +21,7 @@ expires={150}
 Vi använder cookies för att ge dig en bättre upplevelse av OOZE AB.
                           
 <span style={{ fontSize: "11px" }}> <br/> När du använder vår webbsida godkänner du alla cookies i enlighet med vår policy.
-&nbsp;{" "}  <a  href="/Villkor">Läs mer </a></span>
+&nbsp;{" "}  <a  href="/Villkor" target="_blank" >Läs mer </a></span>
 </CookieConsent>
 
 

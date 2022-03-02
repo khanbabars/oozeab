@@ -16,10 +16,13 @@ const Footer = () => {
         
             </p> */}
          
-          
+         
           </MDBCol>
           <MDBCol md="2">
          
+         <a  href="/Villkor"  target="_blank"  style = {{  color :'white' 
+             }} > 
+Allmänna villkor    </a>  
           </MDBCol>
         </MDBRow>
       </MDBContainer>
@@ -27,7 +30,7 @@ const Footer = () => {
         <MDBContainer fluid> <div style = {{fontSize:'22px'}}>
         
         <a href="https://se.linkedin.com/company/ooze-ab" target="_blank"   rel="noopener noreferrer">
-          <div style = {{fontSize:'14px' ,color : 'white'}}> följa oss på <LinkedinIcon  size={35}  /> </div> 
+          <div style = {{fontSize:'16px' ,color : 'white'}}> följa oss på <LinkedinIcon  size={35}  /> </div> 
           
           </a></div> 
     

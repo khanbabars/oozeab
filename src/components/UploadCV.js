@@ -168,14 +168,18 @@ if (apiReply) return (
         <br/> 
       
         <div style = {{ fontSize : '15px', color :'#364a61',  
-             border : '1px solid gainsboro', padding :'10px'}}>
+             border : '1px solid gainsboro', paddingLeft :'28px', paddingTop: '10px', paddingBottom: '10px'}}>
     
 
-<MDBCheckbox onChange={checkboxHandler}  name='flexCheck' value='' />
 
-<a  href="/Villkor">Jag accepterar GDPR och OOZE AB allmänna villkor </a>
+
+<a  href="/Villkor" target="_blank"  style = {{  color :'#2F4F4F' 
+             }} > <MDBCheckbox onChange={checkboxHandler}  name='flexCheck'    />
+* Jag accepterar GDPR och OOZE AB allmänna villkor    </a>  
 
       </div>
+
+      
 
           <br/> <br/> <br/> 
           

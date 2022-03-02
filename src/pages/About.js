@@ -30,7 +30,7 @@ Vi gör digitaliseringen enkel.
         </div>
         <br/><br/><br/> <br/><br/> <br/>
 
-        <img src = {require('../images/Doit.png')  } style={{ width: '100%', height:'220px' } } alt='mix_photo'/>
+        <img src = {require('../images/Doit.png')  } style={{ width: '100%', height:'210px' } } alt='mix_photo'/>
         
        
         </MDBContainer>
