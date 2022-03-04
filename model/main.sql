@@ -58,4 +58,14 @@ create table email_subscription (
 );
 
 
+
+create table oozeab_contact (
+name varchar2(1000),
+email varchar2(1000),
+website varchar2(1000),
+comments varchar2(4000),
+contact_id number generated always as identity,
+created date default sysdate
+);
+
 ---------------------------------------

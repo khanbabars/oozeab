@@ -30,7 +30,7 @@ Vi gör digitaliseringen enkel.
                 <br/>  <br/> <br/>  <br/>
         <MDBRow>
       <MDBCol sm='4'>
-        <MDBCard>
+        <MDBCard >
           <MDBCardBody>
             <MDBCardTitle>Databasutveckling </MDBCardTitle>
             <MDBCardText>
