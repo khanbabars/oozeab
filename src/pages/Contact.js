@@ -35,7 +35,7 @@ render() {
 
       
     < form onSubmit={this.ContactSubmit} className="my-5" style={{ align:'center'}}>
-      <MDBContainer  >
+      <MDBContainer >
       <MDBRow >
         
         <MDBCol lg="12" className="lg-0 mb-12 text-left my-5">

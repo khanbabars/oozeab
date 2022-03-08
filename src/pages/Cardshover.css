@@ -1,11 +1,4 @@
-/*
-===============
-CardDeck
-===============
-*/
-
-
-  .card {
+  .cards {
     background-color: white;
     height: 400px;
     width: 400px;
@@ -13,7 +6,7 @@ CardDeck
     box-shadow: 0px 2px 5px white;
     transition: box-shadow 1s ease-out;
   }
-  .card:hover {
+  .cards:hover {
     box-shadow: 1px 2px 10px rgb(192, 211, 214);
    
     left: 0;

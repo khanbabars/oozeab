@@ -11,7 +11,7 @@ import "./Cardshover.css";
 export const Services = () => { 
   return(
 
-    <React.Fragment>
+    <React.Fragment >
       <MDBContainer className="text-left my-5">
    
         <div>
@@ -34,9 +34,9 @@ Så hör av dig om du har ett digitaliseringsbehov och vill ha en förutsättnin
 Vi gör digitaliseringen enkel.
                 </p> 
                 <br/>  <br/> <br/>  <br/>
-        <MDBRow>
+        <MDBRow >
       <MDBCol md='4' className='d-flex justify-content-center' >
-        <MDBCard>
+        <MDBCard className = 'cards'>
           <MDBCardBody >
             <MDBCardTitle >Databasutveckling </MDBCardTitle>
             <MDBCardText>
@@ -48,7 +48,7 @@ Vi gör digitaliseringen enkel.
       </MDBCol>
 
       <MDBCol md='4' className='d-flex justify-content-center'>
-        <MDBCard>
+        <MDBCard className = 'cards'>
           <MDBCardBody>
             <MDBCardTitle >Förvaltning</MDBCardTitle>
             <MDBCardText>
@@ -61,7 +61,7 @@ Vi gör digitaliseringen enkel.
       
 
       <MDBCol md='4' className='d-flex justify-content-center'>
-        <MDBCard>
+        <MDBCard className = 'cards'>
           <MDBCardBody>
             <MDBCardTitle>Front-End</MDBCardTitle>
             <MDBCardText>
@@ -79,7 +79,7 @@ Vi gör digitaliseringen enkel.
     <br/> <br/>
     <MDBRow>
       <MDBCol md='4' className='d-flex justify-content-center'>
-        <MDBCard>
+        <MDBCard className = 'cards'>
           <MDBCardBody>
             <MDBCardTitle>Integration </MDBCardTitle>
             <MDBCardText>
@@ -91,7 +91,7 @@ Vi gör digitaliseringen enkel.
       </MDBCol>
 
       <MDBCol md='4' className='d-flex justify-content-center'>
-        <MDBCard>
+        <MDBCard className = 'cards'>
           <MDBCardBody>
             <MDBCardTitle>Backend och Fullstack utveckling</MDBCardTitle>
             <MDBCardText>
@@ -104,7 +104,7 @@ Vi gör digitaliseringen enkel.
       
 
       <MDBCol md='4' className='d-flex justify-content-center'>
-        <MDBCard>
+        <MDBCard className = 'cards'>
           <MDBCardBody>
             <MDBCardTitle>Business Intelligence</MDBCardTitle>
             <MDBCardText>
@@ -122,7 +122,7 @@ Vi gör digitaliseringen enkel.
     <br/> <br/>
     <MDBRow>
       <MDBCol md='4'className='d-flex justify-content-center'>
-        <MDBCard>
+        <MDBCard className = 'cards'>
           <MDBCardBody>
             <MDBCardTitle>Konsultuppdrag </MDBCardTitle>
             <MDBCardText>
@@ -134,7 +134,7 @@ Vi gör digitaliseringen enkel.
       </MDBCol>
 
       <MDBCol md='4' className='d-flex justify-content-center'>
-        <MDBCard>
+        <MDBCard className = 'cards'>
           <MDBCardBody>
             <MDBCardTitle> Kandidat intervju</MDBCardTitle>
             <MDBCardText>
@@ -147,7 +147,7 @@ Vi gör digitaliseringen enkel.
 
 
       <MDBCol md='4' className='d-flex justify-content-center' >
-        <MDBCard>
+        <MDBCard className = 'cards'>
           <MDBCardBody>
             <MDBCardTitle> Bokföring, fakturering och finansiella tjänster</MDBCardTitle>
             <MDBCardText>
