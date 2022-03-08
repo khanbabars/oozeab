@@ -1,12 +1,18 @@
 import React from 'react'
 import { MDBContainer } from 'mdbreact';
-import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBRow,MDBCol } from 'mdb-react-ui-kit';
+import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBRow,MDBCol} from 'mdbreact';
 import services from '../images/services.PNG';
+import "./Cardshover.css";
 
 
-export const Services = () => { return(
 
-    <MDBContainer className="text-left my-5">
+
+
+export const Services = () => { 
+  return(
+
+    <React.Fragment>
+      <MDBContainer className="text-left my-5">
    
         <div>
         <br/>  <br/> <br/>  <br/><br/>  <br/> <br/>  <br/>
@@ -29,10 +35,10 @@ Vi gör digitaliseringen enkel.
                 </p> 
                 <br/>  <br/> <br/>  <br/>
         <MDBRow>
-      <MDBCol sm='4'>
-        <MDBCard >
-          <MDBCardBody>
-            <MDBCardTitle>Databasutveckling </MDBCardTitle>
+      <MDBCol md='4' className='d-flex justify-content-center' >
+        <MDBCard>
+          <MDBCardBody >
+            <MDBCardTitle >Databasutveckling </MDBCardTitle>
             <MDBCardText>
             Vi har stark kunskap inom databas område vi jobbar daligen med DBA, Performance, Utveckling, licenering, strategy, design, arkitektur. Våra experter arbetar daligen med stora databaser Oracle, Micrrosoft SQL, Postgres 
             </MDBCardText>
@@ -41,10 +47,10 @@ Vi gör digitaliseringen enkel.
         </MDBCard>
       </MDBCol>
 
-      <MDBCol sm='4'>
+      <MDBCol md='4' className='d-flex justify-content-center'>
         <MDBCard>
           <MDBCardBody>
-            <MDBCardTitle>Förvaltning</MDBCardTitle>
+            <MDBCardTitle >Förvaltning</MDBCardTitle>
             <MDBCardText>
             I en digital värld är det viktigt att IT-system utvecklas och förvaltas. För att uppnå detta erbjuder vi dedikerade och involverade utvecklare som kontinuerligt jobbar med systemet. Vi hjälper er att hålla era produkter levande.
             </MDBCardText>
@@ -54,7 +60,7 @@ Vi gör digitaliseringen enkel.
       </MDBCol>
       
 
-      <MDBCol sm='4'>
+      <MDBCol md='4' className='d-flex justify-content-center'>
         <MDBCard>
           <MDBCardBody>
             <MDBCardTitle>Front-End</MDBCardTitle>
@@ -72,7 +78,7 @@ Vi gör digitaliseringen enkel.
     
     <br/> <br/>
     <MDBRow>
-      <MDBCol sm='4'>
+      <MDBCol md='4' className='d-flex justify-content-center'>
         <MDBCard>
           <MDBCardBody>
             <MDBCardTitle>Integration </MDBCardTitle>
@@ -84,7 +90,7 @@ Vi gör digitaliseringen enkel.
         </MDBCard>
       </MDBCol>
 
-      <MDBCol sm='4'>
+      <MDBCol md='4' className='d-flex justify-content-center'>
         <MDBCard>
           <MDBCardBody>
             <MDBCardTitle>Backend och Fullstack utveckling</MDBCardTitle>
@@ -97,7 +103,7 @@ Vi gör digitaliseringen enkel.
       </MDBCol>
       
 
-      <MDBCol sm='4'>
+      <MDBCol md='4' className='d-flex justify-content-center'>
         <MDBCard>
           <MDBCardBody>
             <MDBCardTitle>Business Intelligence</MDBCardTitle>
@@ -115,7 +121,7 @@ Vi gör digitaliseringen enkel.
 
     <br/> <br/>
     <MDBRow>
-      <MDBCol sm='4'>
+      <MDBCol md='4'className='d-flex justify-content-center'>
         <MDBCard>
           <MDBCardBody>
             <MDBCardTitle>Konsultuppdrag </MDBCardTitle>
@@ -127,12 +133,12 @@ Vi gör digitaliseringen enkel.
         </MDBCard>
       </MDBCol>
 
-      <MDBCol sm='4'>
+      <MDBCol md='4' className='d-flex justify-content-center'>
         <MDBCard>
           <MDBCardBody>
             <MDBCardTitle> Kandidat intervju</MDBCardTitle>
             <MDBCardText>
-            Vi kan hjälpa till med bokföring 
+            vi hjälper till med kandidatintervjun. vi använder vårt stora nätverk av experter för att filtrera bra kandidater som ger kvalitet och känns rätt för slutkunden.
             </MDBCardText>
             {/* <MDBBtn href='#'>Go somewhere</MDBBtn> */}
           </MDBCardBody>
@@ -140,24 +146,21 @@ Vi gör digitaliseringen enkel.
       </MDBCol>
 
 
-      <MDBCol sm='4'>
+      <MDBCol md='4' className='d-flex justify-content-center' >
         <MDBCard>
           <MDBCardBody>
             <MDBCardTitle> Bokföring, fakturering och finansiella tjänster</MDBCardTitle>
             <MDBCardText>
             Vi kan hjälpa till med bokföring 
+
             </MDBCardText>
             {/* <MDBBtn href='#'>Go somewhere</MDBBtn> */}
           </MDBCardBody>
         </MDBCard>
       </MDBCol>
-      
-
-
 
 
     </MDBRow>
-
 
 <br/><br/>
 
@@ -168,6 +171,8 @@ Vi gör digitaliseringen enkel.
         </div>
         <br/><br/><br/> <br/><br/> <br/>
         </MDBContainer>
+      
+        </React.Fragment>
         
         
     )}

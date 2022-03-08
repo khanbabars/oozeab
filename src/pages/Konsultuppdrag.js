@@ -19,7 +19,7 @@ export const Konsultuppdrag = ({browseAssignment}) => {
         <br/><br/><br/>
         <p style={{ paddingTop: '20px',fontSize: '32px', color: 'black', textAlign:'left'}}>Hitta konsultuppdrag</p>     
   <hr/>  
-        <br/>
+        
         &nbsp;&nbsp; <Assignments browseAssignment={browseAssignment}/> 
         <br/> <br/>      <br/> <br/>
      

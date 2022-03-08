@@ -84,7 +84,7 @@ render() {
                   name='email'
                   value={this.state.email}
                   required onChange={this.handleChange}
-                  required/>
+                  />
               </div>
 
               <label

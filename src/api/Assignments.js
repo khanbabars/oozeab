@@ -15,7 +15,7 @@ export default class Assignments extends React.Component {
                         btnShowMore :'Läs mer',
                         btnShowLess :'dölja',
                         ids: [],
-                        setVisible : 7,
+                        setVisible : 15,
                     }};
 async componentDidMount() {  
         fetchData(this.state).then((item)=>{
@@ -60,7 +60,7 @@ static getDerivedStateFromProps(nextProps, state)
 
     }
     loadMoreItems = ()  => {
-      this.setState({setVisible: this.state.setVisible + 3}) 
+      this.setState({setVisible: this.state.setVisible + 10}) 
       }        
 
 
@@ -77,9 +77,10 @@ static getDerivedStateFromProps(nextProps, state)
  <React.Fragment> 
 
 
-    <div> <ul >{this.state.items.slice(0,this.state.setVisible).map((item, index) => <li key={index}> 
+    <div style={{ fontSize:'17px'}}> <ul >{this.state.items.slice(0,this.state.setVisible).map((item, index) => <li key={index}> 
 
-        <b style={{ fontSize:'19px'}}>{item.project_heading}</b><b style={{ fontSize:'11px', borderRadius: '25px', color:'white', backgroundColor:'#426279', padding: '2px'}} >  UP</b>   
+        <b >{item.project_heading}</b><b style={{ fontSize:'13px', borderRadius: '25px', color:'white', backgroundColor:'#426279', padding: '2px'}} >  UP</b>   
+        
         <br/>Startdatum: {item.project_start_date}   
         <br/>Slutdatum: {item.project_end_date}   
         <br/>Ansök senast:{item.application_close_date}
