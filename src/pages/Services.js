@@ -1,8 +1,7 @@
 import React from 'react'
 import { MDBContainer } from 'mdbreact';
 import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBRow,MDBCol} from 'mdbreact';
-import services from '../images/services.PNG';
-import "./Cardshover.css";
+import "./Custom.css";
 
 
 
@@ -167,7 +166,12 @@ Vi gör digitaliseringen enkel.
 <br/><br/><br/> <br/><br/> 
 
 <br/><br/><br/> <br/><br/> 
-<img src={services} alt={"services"} /><br/>
+<div className='services' >
+
+        </div>
+
+
+<br/>
         </div>
         <br/><br/><br/> <br/><br/> <br/>
         </MDBContainer>

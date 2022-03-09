@@ -1,5 +1,6 @@
 import React from 'react'
 import { MDBContainer } from 'mdbreact';
+import "../pages/Custom.css";
 
 
 
@@ -30,8 +31,9 @@ Vi gör digitaliseringen enkel.
         </div>
         <br/><br/><br/> <br/><br/> <br/>
 
-        <img src = {require('../images/Doit.png')  } style={{ width: '100%', height:'210px' } } alt='mix_photo'/>
-        
+<div className='aboutus' >
+
+        </div>
        
         </MDBContainer>
         
