@@ -1,229 +1,188 @@
+.cards {
+  background-color: white;
+  height: 400px;
+  width: 400px;
+  overflow: hidden;
+  box-shadow: 0px 2px 5px white;
+  transition: box-shadow 1s ease-out;
+}
+.cards:hover {
+  box-shadow: 1px 2px 10px rgb(192, 211, 214);
 
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.3s ease-out;
+  transform: translateY(-10px);
+}
 
+.aboutus {
+  width: 100%;
+  height: 230px;
+  background-image: url("../images/Doit.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
 
+.services {
+  width: 100%;
+  height: 280px;
+  background-image: url("../images/services.PNG");
+  background-repeat: no-repeat;
+}
 
+.jumbo {
+  animation-name: banner;
+  height: 800px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  perspective: 1000;
+}
+
+@keyframes banner {
+  0% {
+    background-image: url("../images/background1.jpg");
+  }
+  100% {
+    background-image: url("../images/background1.jpg");
+  }
+}
+
+.overlay {
+  color: white;
+  padding-top: 90px;
+  font-size: 70px;
+  text-align: center;
+  font-weight: 600;
+  font-family: worksans-semibold, work sans, sans-serif;
+  letter-spacing: -0.03em;
+  padding-bottom: 30px;
+}
+
+.register-for-mail {
+  background-color: #17a2b8;
+  overflow: hidden;
+  outline: none;
+  text-align: center;
+  font-size: 16px;
+  position: absolute;
+  color: white;
+  border-radius: 4px;
+
+  cursor: pointer;
+  padding: 8px 20px;
+
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.register-for-mail:hover {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.middle {
+  padding-top: 130px;
+  color: white;
+  font-size: 19px;
+  text-align: center;
+  animation: 1s slide-right;
+  margin-top: 0%;
+  -webkit-animation-duration: 10s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes slide-right {
+  from {
+    margin-right: -100%;
+    height: 700%;
+  }
+
+  to {
+    margin-top: 0%;
+    height: 100%;
+  }
+}
+
+.adjust-modal {
+  transform: translate(0%, 0%);
+}
+
+@media screen and (max-width: 480px) {
   .cards {
     background-color: white;
-    height: 400px;
-    width: 400px;
+    height: 200px;
+    width: 2100px;
     overflow: hidden;
     box-shadow: 0px 2px 5px white;
     transition: box-shadow 1s ease-out;
   }
   .cards:hover {
     box-shadow: 1px 2px 10px rgb(192, 211, 214);
-   
+
     left: 0;
     top: 0;
     height: 100%;
     width: 100%;
     transition: transform 0.3s ease-out;
     transform: translateY(-10px);
-
- 
-
   }
-
 
   .aboutus {
-    width: 100%;
-     height:230px;
-     background-image: url("../images/Doit.png");
-     background-size: 100%;
-     background-repeat: no-repeat;
+    background-image: url("../images/Doit_mob.png");
+    background-size: 100%;
   }
 
-  
-.services{
-  width: 100%;
-  height:280px;
-  background-image: url("../images/services.PNG");
-  background-repeat: no-repeat;
-}
-
-
-  .jumbo{
-    animation-name: banner;
-    height: 800px;
-    background-size:cover;
-    background-repeat: no-repeat;
-    animation-duration: 20s; 
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    perspective: 1000;
- 
-   
-
-}
-   
-  
-@keyframes banner{
-    0% { background-image: url("../images/background1.jpg");}
-    100% { background-image: url("../images/background1.jpg");}
- 
-  }
-
-
-.overlay{
+  .overlay {
     color: white;
-    padding-top: 90px;
-    font-size :70px;
+    padding-top: 60%;
+    font-size: 40px;
     text-align: center;
-    font-weight:600;
-     font-family: worksans-semibold,work sans,sans-serif;
-     letter-spacing: -0.03em;
-     padding-bottom: 30px;;
-}
+    font-weight: 200%;
+    font-family: worksans-semibold, work sans, sans-serif;
+    letter-spacing: -0.03em;
+  }
 
-.register-for-mail{
+  .register-for-mail {
     background-color: #17a2b8;
     overflow: hidden;
     outline: none;
     text-align: center;
-    font-size: 16px;
+    font-size: 15px;
     position: absolute;
-    color:white;
+    color: white;
     border-radius: 4px;
-  
+
     cursor: pointer;
     padding: 8px 20px;
-   
- 
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);  
- }
 
-
-
- .register-for-mail:hover {
-  background-color: #17a2b8;
-  color: white;
-}
-
-.middle{
-    padding-top: 130px;
-    color: white;
-    font-size: 19px;
-    text-align: center;
-    animation: 1s slide-right;
-    margin-top:0%;
-    -webkit-animation-duration: 10s;animation-duration: 1s;
-    -webkit-animation-fill-mode: both;animation-fill-mode: both;
-  }
-  
-  @keyframes slide-right {
-    from {
-      margin-right: -100%;
-      height: 700%; 
-    }
-  
-    to {
-      margin-top: 0%;
-      height: 100%;
-    } 
-}
-
-.adjust-modal{
-  transform: translate(0%, 0%);
-
-}
-
-
-
-
-
-
-  
-  @media screen and (max-width: 480px) {
-  
-    .cards {
-      background-color: white;
-      height: 200px;
-      width: 2100px;
-      overflow: hidden;
-      box-shadow: 0px 2px 5px white;
-      transition: box-shadow 1s ease-out;
-    }
-    .cards:hover {
-      box-shadow: 1px 2px 10px rgb(192, 211, 214);
-     
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      transition: transform 0.3s ease-out;
-      transform: translateY(-10px);
-        }
-  
-        .aboutus{
-        
-          background-image: url("../images/Doit_mob.png");
-          background-size:100%;
-      }
-
-      .overlay{
-        color: white;
-        padding-top: 60%;
-        font-size :40px;
-        text-align: center;
-        font-weight:200%;
-         font-family: worksans-semibold,work sans,sans-serif;
-         letter-spacing: -0.03em;
-    }
-
-
-
-
-    .register-for-mail{
-      background-color: #17a2b8;
-      overflow: hidden;
-      outline: none;
-      text-align: center;
-      font-size: 15px;
-      position: absolute;
-      color:white;
-      border-radius: 4px;
-    
-      cursor: pointer;
-      padding: 8px 20px;
-     
     top: 55%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);  
-   }
-  
-  
-  
-   .register-for-mail:hover {
+    transform: translate(-50%, -50%);
+  }
+
+  .register-for-mail:hover {
     background-color: #17a2b8;
     color: white;
   }
-  
 
-    
-.services{
-  height: 510px;
-  background-image: url("../images/services_mob.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
+  .services {
+    height: 510px;
+    background-image: url("../images/services_mob.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
 }
 
-  }
-    
-
-
-
-  @media screen 
-  and (min-device-width: 1200px) 
-  and (max-device-width: 1600px) 
-  and (-webkit-min-device-pixel-ratio: 1) { 
-
-
-    
-
-
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
   .cards {
     background-color: white;
     height: 350px;
@@ -234,127 +193,110 @@
   }
   .cards:hover {
     box-shadow: 1px 2px 10px rgb(192, 211, 214);
-   
+
     left: 0;
     top: 0;
     height: 100%;
     width: 100%;
     transition: transform 0.3s ease-out;
     transform: translateY(-10px);
-
- 
-
   }
-
 
   .aboutus {
     width: 100%;
-     height:230px;
-     background-image: url("../images/Doit.png");
-     background-size: 100%;
-     background-repeat: no-repeat;
+    height: 230px;
+    background-image: url("../images/Doit.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
   }
 
-  
-.services{
-  width: 100%;
-  height:280px;
-  background-image: url("../images/services.PNG");
-  background-repeat: no-repeat;
-}
+  .services {
+    width: 100%;
+    height: 280px;
+    background-image: url("../images/services.PNG");
+    background-repeat: no-repeat;
+  }
 
-
-  .jumbo{
+  .jumbo {
     animation-name: banner;
     height: 600px;
-    background-size:cover;
+    background-size: cover;
     background-repeat: no-repeat;
-    animation-duration: 20s; 
+    animation-duration: 20s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     perspective: 1000;
- 
-   
-
-}
-   
-  
-@keyframes banner{
-    0% { background-image: url("../images/background1.jpg");}
-    100% { background-image: url("../images/background1.jpg");}
- 
   }
 
+  @keyframes banner {
+    0% {
+      background-image: url("../images/background1.jpg");
+    }
+    100% {
+      background-image: url("../images/background1.jpg");
+    }
+  }
 
-.overlay{
+  .overlay {
     color: white;
     padding-top: 90px;
-    font-size :60px;
+    font-size: 60px;
     text-align: center;
-    font-weight:600;
-     font-family: worksans-semibold,work sans,sans-serif;
-     letter-spacing: -0.03em;
-     padding-bottom: 30px;;
-}
+    font-weight: 600;
+    font-family: worksans-semibold, work sans, sans-serif;
+    letter-spacing: -0.03em;
+    padding-bottom: 30px;
+  }
 
-.register-for-mail{
+  .register-for-mail {
     background-color: #17a2b8;
     overflow: hidden;
     outline: none;
     text-align: center;
     font-size: 13px;
     position: absolute;
-    color:white;
+    color: white;
     border-radius: 4px;
-  
+
     cursor: pointer;
     padding: 8px 20px;
-   
- 
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);  
- }
 
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
 
+  .register-for-mail:hover {
+    background-color: #17a2b8;
+    color: white;
+  }
 
- .register-for-mail:hover {
-  background-color: #17a2b8;
-  color: white;
-}
-
-.middle{
+  .middle {
     padding-top: 80px;
     color: white;
     font-size: 15px;
     text-align: center;
     animation: 1s slide-right;
-    margin-top:0%;
-    -webkit-animation-duration: 10s;animation-duration: 1s;
-    -webkit-animation-fill-mode: both;animation-fill-mode: both;
+    margin-top: 0%;
+    -webkit-animation-duration: 10s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
   }
-  
+
   @keyframes slide-right {
     from {
       margin-right: -100%;
-      height: 700%; 
+      height: 700%;
     }
-  
+
     to {
       margin-top: 0%;
       height: 100%;
-    } 
+    }
+  }
+
+  .adjust-modal {
+    transform: translate(0%, 0%);
+  }
 }
-
-.adjust-modal{
-  transform: translate(0%, 0%);
-
-}
-
-
-}
-
-
-
-
-
