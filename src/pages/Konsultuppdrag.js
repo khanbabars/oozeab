@@ -19,7 +19,6 @@ export const Konsultuppdrag = ({ browseAssignment }) => {
         >
           Hitta konsultuppdrag
         </p>
-        <hr />
         &nbsp;&nbsp; <Assignments browseAssignment={browseAssignment} />
         <br /> <br /> <br /> <br />
       </div>

@@ -71,7 +71,7 @@ export default class Assignments extends React.Component {
         perPageItems,
         loading: false,
       });
-      console.log(this.state.items);
+    
     });
   }
 
@@ -127,7 +127,7 @@ export default class Assignments extends React.Component {
     } else {
       return (
         <React.Fragment>
-          <div style={{ fontSize: "17px" }}>
+          <div style={{ fontSize: "17px", border: "1px solid #efefef", padding: "25px" }}>
             {" "}
             <ul>
               {this.state.perPageItems
@@ -137,17 +137,20 @@ export default class Assignments extends React.Component {
                     <b>{item.project_heading}</b>
                     <b
                       style={{
-                        fontSize: "13px",
+                        fontSize: "12px",
                         borderRadius: "25px",
                         color: "white",
                         backgroundColor: "#426279",
-                        padding: "2px",
+                        padding: "2px"
+                    
                       }}
                     >
+                     
                       {" "}
                       UP
                     </b>
                     <br />
+                    <div>
                     Startdatum: {item.project_start_date}
                     <br />
                     Slutdatum: {item.project_end_date}
@@ -155,11 +158,13 @@ export default class Assignments extends React.Component {
                     Ansök senast:{item.application_close_date}
                     <br />
                     Omfattning: {item.project_availablity}
+                    </div>
                     <b
                       style={{
                         fontSize: "16px",
                         fontWeight: "normal",
-                        whiteSpace: "pre-wrap",
+                        whiteSpace: "pre-wrap"
+                        
                       }}
                     >
                       {this.state.ids.includes(+item.project_id) &&
@@ -175,6 +180,7 @@ export default class Assignments extends React.Component {
                         color: "white",
                         backgroundColor: "#17a2b8",
                         padding: "5px",
+                        border: "1px solid black"
                       }}
                     >
                       {item.project_location}
