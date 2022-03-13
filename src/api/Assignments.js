@@ -1,6 +1,44 @@
 import React from "react";
 import { API_ASSIGNMENTS } from "../cache/api";
 import ReactPaginate from "react-paginate";
+import styled from "styled-components";
+const MyPaginate = styled(ReactPaginate).attrs({
+  activeClassName: "active",
+})`
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style-type: none;
+  color: black;
+  padding: 0 5rem;
+  li a {
+    border-radius: 4px;
+    padding: 0.1rem 1rem;
+
+    cursor: pointer;
+    color: black;
+  }
+  li.previous a,
+  li.next a,
+  li.break a {
+    border-color: gray;
+  }
+  li.active a {
+    background-color: #efefef;
+    border-color: gray;
+    color: black;
+    min-width: 32px;
+    border: 1px solid gray;
+  }
+  li.disabled a {
+    color: grey;
+  }
+  li.disable,
+  li.disabled a {
+    cursor: default;
+  }
+`;
 
 export default class Assignments extends React.Component {
   constructor(props) {
@@ -29,8 +67,8 @@ export default class Assignments extends React.Component {
       const perPageItems = item.slice(this.state.offset, this.state.setVisible);
       this.setState({
         items: item,
-        perPageItems,
         pageCount: Math.ceil(item.length / this.state.setVisible),
+        perPageItems,
         loading: false,
       });
       console.log(this.state.items);
@@ -65,21 +103,21 @@ export default class Assignments extends React.Component {
 
   handlePageClick = (e) => {
     const selectedPage = e.selected;
-    const currentPageSelection = selectedPage + 1;
-    const currentSelectionStart = this.state.setVisible;
-    const currentSelectionEnd = currentPageSelection * 10;
-    const perPageItems = this.state.items.slice(
-      currentSelectionStart,
-      currentSelectionEnd
-    );
-    this.setState({
-      offset: currentSelectionStart,
-      perPageItems,
-      setVisible: currentSelectionEnd,
-    });
-
-    console.log(this.state.items);
-    console.log(this.state.offset);
+    const currentSelectionStart =
+      selectedPage === 1 ? selectedPage : selectedPage * 10 - 10;
+    const currentSelectionEnd = selectedPage * 10;
+    if (selectedPage > 0) {
+      this.setState({
+        offset: currentSelectionStart,
+        perPageItems: this.state.items.slice(
+          currentSelectionStart,
+          currentSelectionEnd
+        ),
+        setVisible: currentSelectionEnd,
+      });
+    } else {
+      this.setState({ perPageItems: this.state.items.slice(0, 10) });
+    }
   };
 
   render() {
@@ -162,21 +200,51 @@ export default class Assignments extends React.Component {
                   </li>
                 ))}
             </ul>
-            <ReactPaginate
-              previousLabel={"prev"}
-              nextLabel={"next"}
+            <MyPaginate
+              previousLabel={"Föregående"}
+              nextLabel={"Nästa"}
+              pageCount={this.state.pageCount}
+              onPageChange={this.handlePageClick}
+            />
+            {/* <nav aria-label="Page navigation comments">
+            <ReactPaginate 
+              previousLabel={"Föregående"}
+              nextLabel={"Nästa"}
               breakLabel={"..."}
-              breakClassName={"break-me"}
+              breakClassName={"page-item"}
+              breakLinkClassName="page-link"
               pageCount={this.state.pageCount}
               marginPagesDisplayed={2}
               pageRangeDisplayed={5}
               onPageChange={this.handlePageClick}
-              containerClassName={"pagination"}
+              containerClassName={"pagination justify-content-center"}
+              pageClassName="page-item"
+              pageLinkClassName="page-link"
+              previousClassName="page-item"
+              previousLinkClassName="page-link"
+              nextClassName="page-item"
+              nextLinkClassName="page-link"
               subContainerClassName={"pages pagination"}
               activeClassName={"active"}
+              renderOnZeroPageCount={null}
+
+              hrefBuilder={(page, pageCount, selected) =>
+                page >= 1 && page <= pageCount ? `/page/${page}` : '#'
+              }
+              hrefAllControls
+       
+              onClick={(clickEvent) => {
+                console.log('onClick', clickEvent);
+                // Return false to prevent standard page change,
+                // return false; // --> Will do nothing.
+                // return a number to choose the next page,
+                // return 4; --> Will go to page 5 (index 4)
+                // return nothing (undefined) to let standard behavior take place.
+              }}
             />
+             </nav> */}
             <br />
-            <button
+            {/* <button
               style={{
                 fontSize: "18px",
                 borderRadius: "4px",
@@ -187,7 +255,7 @@ export default class Assignments extends React.Component {
               onClick={this.loadMoreItems}
             >
               Visa flera{" "}
-            </button>
+            </button> */}
             <br />
             <br />
             <br />

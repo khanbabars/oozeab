@@ -8,6 +8,7 @@ import { Jumbotron } from "./jumbotron";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ApplyJob } from "./components/ApplyJob";
 import { Terms } from "./pages/Terms";
+import { Policy } from "./pages/Policy";
 import Footer from "./components/Footer";
 
 function Main() {
@@ -46,6 +47,7 @@ function App() {
         <Switch>
           <Route path="/" component={Main} exact={true} />
           <Route path="/Villkor" component={Terms} />
+          <Route path="/Policy" component={Policy} />
           <Route path="/:ApplyJob" component={ApplyJob} exact={true} />
         </Switch>
       </Router>

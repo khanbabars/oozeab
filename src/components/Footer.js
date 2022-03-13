@@ -18,6 +18,9 @@ const Footer = () => {
             <MDBCol md="2">
               <a href="/Villkor" target="_blank" style={{ color: "white" }}>
                 Allmänna villkor{" "}
+              </a> <br/>
+              <a href="/Policy" target="_blank" style={{ color: "white" }}>
+                personuppgiftspolicy{" "}
               </a>
             </MDBCol>
           </MDBRow>
@@ -37,7 +40,7 @@ const Footer = () => {
                 </div>
               </a>
             </div>
-            <p style={{ fontSize: "15px" }}>uppdrag@oozeab.se | 0700679299</p>
+            <p style={{ fontSize: "15px" }}>uppdrag@oozeab.se</p>
             <hr />
             &copy; {new Date().getFullYear()} Ooze AB
           </MDBContainer>
