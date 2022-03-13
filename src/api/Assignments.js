@@ -127,13 +127,13 @@ export default class Assignments extends React.Component {
     } else {
       return (
         <React.Fragment>
-          <div style={{ fontSize: "17px", border: "1px solid #efefef", padding: "25px" }}>
+          <div>
             {" "}
             <ul>
               {this.state.perPageItems
                 .slice(0, this.state.setVisible)
                 .map((item, index) => (
-                  <li key={index}>
+                  <li key={index}  style={{  border: "1px ridge #e8e8e8", padding: "25px" }}>
                     <b>{item.project_heading}</b>
                     <b
                       style={{
@@ -150,7 +150,7 @@ export default class Assignments extends React.Component {
                       UP
                     </b>
                     <br />
-                    <div>
+                    <div style={{fontSize: '16px', paddingTop:'10px'}}>
                     Startdatum: {item.project_start_date}
                     <br />
                     Slutdatum: {item.project_end_date}
@@ -201,7 +201,8 @@ export default class Assignments extends React.Component {
                     >
                       Ansök
                     </button>
-                    <hr></hr>
+                    
+                 
                     <br />
                   </li>
                 ))}
