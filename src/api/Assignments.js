@@ -150,7 +150,7 @@ export default class Assignments extends React.Component {
                       UP
                     </b>
                     <br />
-                    <div style={{fontSize: '16px', paddingTop:'10px'}}>
+                    <div style={{fontSize: '15px', paddingTop:'10px'}}>
                     Startdatum: {item.project_start_date}
                     <br />
                     Slutdatum: {item.project_end_date}
