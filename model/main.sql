@@ -68,4 +68,22 @@ contact_id number generated always as identity,
 created date default sysdate
 );
 
+
+
+
+create table url_dump(
+    url                 varchar2(4000),
+    load_id             number generated always as identity,
+    created             date default sysdate);
+
+
+
+
+create table keyman_dump(
+    consultant_company   varchar2(4000),
+    project_details     clob,
+    project_url         varchar2(4000),
+    load_id              number generated always as identity,
+    created              date default sysdate);
+
 ---------------------------------------
