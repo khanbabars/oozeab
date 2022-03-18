@@ -199,7 +199,7 @@ const UploadCV = ({ projectProps }) => {
                         onChange={checkboxHandler}
                         name="flexCheck"
                       />
-                      * Jag accepterar GDPR och OOZE AB allmänna villkor{" "}
+                      * Jag accepterar OOZE AB allmänna villkor och personuppgiftspolicy{" "}
                     </a>
                   </div>
                   <br /> <br /> <br />

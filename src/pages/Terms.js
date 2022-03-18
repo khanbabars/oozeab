@@ -26,7 +26,7 @@ export const Terms = () => {
       <MDBContainer className="text-left my-5">
         <div>
           <br />
-          <h3>Gdpr</h3>
+          
 
           <p
             style={{
@@ -38,59 +38,7 @@ export const Terms = () => {
               textAlign: "left",
             }}
           >
-            De personuppgifter som samlas in och behandlas genom våra
-            karriärsidor kommer endast att vara tillgängliga för utvalda Ooze ab
-            anställda eller externa rekryterare som valts ut av Ooze ab och
-            endast i rekryteringssyfte.
-            <br />
-            Söker du en specifik tjänst ger du även ditt samtycke till att göra
-            dina registrerade uppgifter tillgängliga till berört företag som ska
-            rekrytera, Ooze ab's uppdragsgivare. Registrerar du dig i vårt
-            kandidatnätverk utan att söka en specifik tjänst lämnar vi inte ut
-            några uppgifter förrän vi haft kontakt och fått ditt samtycke. Om
-            din profil kommer upp som match i vårt searcharbete kan din
-            kandidatprofil delas internt på Ooze till andra intressanta tjänster
-            som passar din profil.
-            <br />
-            Dina personliga uppgifter lagras i förtroende och vi kommer att
-            lagra dem så länge det är nödvändigt ur rekryteringssyfte, dock inte
-            längre än 2 år därefter. Om du vill att dina personuppgifter
-            korrigeras, uppdateras, tas bort eller begränsas på något sätt
-            vänligen kontakta oss.
-            <br />
-            Du kan också uppdatera din profil när som helst genom att följa
-            samma procedur som för att registrera en ny ansökan.
-            <br />
-            Lämpliga tekniska och organisatoriska säkerhetsåtgärder är vidtagna
-            och underhålls för att skydda personuppgifter mot oavsiktlig,
-            olaglig eller obehörig åtkomst, användning, avslöjande, ändring,
-            förstörelse eller förlust av personuppgifter.
-            <br />
-            Alla förändringar vi gör i vår integritetspolicy kommer att
-            publiceras på denna sida. Kom tillbaka regelbundet för att ta del av
-            eventuella uppdateringar eller förändringar till denna
-            integritetspolicy.
-            <br /> <br />
-            <h3>Sekretess</h3>
-            Konsulten/leverantören får inte till tredje man, utan Ooze ab och
-            slutkundens godkännande, lämna ut handlingar eller på annat sätt
-            återge uppgifter, vilka är skyddade enligt lagen om
-            företagshemlig-heter eller uppgifter som rör beställarens kunder i
-            annan utsträckning än vad som erfordras för uppdragets/offertens
-            genomförande. Leverantören förbinder sig att inte utnyttja
-            dokumentation, handlingar eller information som Leve-rantören
-            mottagit från Ooze ab eller för Ooze ab räkning och inte heller göra
-            detta tillgängligt för tredje man. <br />
-            Vi vill gärna jobba med dig! Vi hjälper företag i hela Sverige att
-            digitaliseras. Därför finns vi inte till för vår egen skull. Vårt
-            enda mål är hjälpa dig bli ännu mer lönsam. Vi är kända för vårt
-            glada humör, vårt enkla sätt, vår tekniska höjd och vår
-            affärsmässiga kompetens. Vi tror på goda samarbeten, på noggrant
-            genomförda projekt och på tydliga, mätbara mål. Så hör av dig om du
-            har ett digitaliseringsbehov och vill ha en förutsättningslös
-            diskussion med någon som är expert på området. Vi gör
-            digitaliseringen enkel. <br />
-            <br />
+            
             <h3>Äganderätt</h3>
             Produkten av det arbete som konsulten utför tillfaller kunden såvida
             inget annat avtalats.
@@ -147,6 +95,8 @@ export const Terms = () => {
             gällande prisbasbeloppet skall tvisten istället avgöras av en ensam
             skiljeman i Stockholm. Skiljemannen skall på parts begäran utses av
             Stockholms Handelskammare.
+            <br/> <br/>
+
           </p>
         </div>
       </MDBContainer>
