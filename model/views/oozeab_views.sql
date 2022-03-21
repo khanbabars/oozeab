@@ -11,15 +11,14 @@ CREATE OR replace force editionable view "GENERAL"."KEYMAN_PARSED_VIEW"(
     WITH tmp AS (
         SELECT
             load_id,
-            CAST(project_details AS VARCHAR2(4000) ) str,
-            regexp_replace(replace(CAST(project_details AS VARCHAR2(4000) ),'?',''),'\s+(' || CHR(32)
-                                                                                                        || '|$)','\1') str_2,
-            regexp_replace(replace(project_details,'?',''),'\s+(' || CHR(32)
-                                                                          || '|$)','\1') removed_empty,
-            regexp_replace(replace(TRIM(regexp_replace(project_details,'[0-9]+') ),'-',' '),'^\s*',NULL,1,0,'m') remove_space
+            CAST(project_page AS VARCHAR2(4000) ) str,
+            regexp_replace(replace(CAST(project_page AS VARCHAR2(4000) ),'?',''),'\s+(' || CHR(32)
+                                                                                                     || '|$)','\1') str_2,
+            regexp_replace(replace(project_page,'?',''),'\s+(' || CHR(32)
+                                                                       || '|$)','\1') removed_empty,
+            regexp_replace(replace(TRIM(regexp_replace(project_page,'[0-9]+') ),'-',' '),'^\s*',NULL,1,0,'m') remove_space
         FROM
-            keyman_dump 
---where load_id  in ( 521,522)
+            keyman_dump
     )
     SELECT
         load_id,
@@ -32,8 +31,7 @@ CREATE OR replace force editionable view "GENERAL"."KEYMAN_PARSED_VIEW"(
         str   AS project_description
     FROM
         tmp;
-   
-   
+
    
    
    
