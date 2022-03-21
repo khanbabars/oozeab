@@ -5,7 +5,7 @@ CREATE OR REPLACE PACKAGE CONSULTING AS
   
   procedure parse_upgraded;
   
-  
+  procedure parse_keyman;
 
 END CONSULTING;
 /
@@ -21,7 +21,7 @@ is
   --               clean data for upgraded projects  
   ------------------------------------------------------------------------------
   lv_load_id number;
-  lv_consultant_company varchar2(100):= 'UPGRADED';
+  lv_consultant_company varchar2(100):= 'Upragded People AB';
   lv_location varchar2(400);
   lv_project_details varchar2(4000);
   lv_project_original_url  varchar2(4000);
@@ -134,6 +134,60 @@ commit;
 
 end parse_upgraded;
 
+
+
+
+procedure parse_keyman
+
+is
+  ------------------------------------------------------------------------------
+  --  function:    parse_keyman
+  --  created by:  Shazib Saleem Warraich, 2022-03-21
+  --  desc:        procedure will be used to prepare 
+  --               clean data for Keyman projects  
+  ------------------------------------------------------------------------------
+  lv_load_id number;
+  lv_consultant_company varchar2(100):= 'Keyman AB';
+  lv_location varchar2(400);
+  lv_project_details varchar2(4000);
+  lv_project_original_url  varchar2(4000);
+  lv_project_heading varchar(4000);
+  lv_project_url varchar2(4000);
+  lv_project_contact varchar2(4000);
+  lv_cnt number;
+ 
+  begin  
+
+
+        select 1 into lv_cnt from dual;
+
+end parse_keyman;
+
+
+/*
+
+
+
+with tmp as 
+(select 
+load_id,
+ cast(project_details as varchar2(4000) ) str_2,
+regexp_replace(replace(cast(project_details as varchar2(4000) ), '?', '' ) ,'\s+('||CHR(32)||'|$)', '\1')str,
+regexp_replace(replace(project_details, '?', '' ) ,'\s+('||CHR(32)||'|$)', '\1')  removed_empty,
+regexp_replace(replace(trim(regexp_replace(project_details, '[0-9]+')),'-', ' '),  '^\s*', null, 1, 0, 'm') remove_space
+from keyman_dump 
+where load_id  in ( 403,406)
+)
+    select
+       load_id,
+       regexp_substr( str, '[[:alpha:]]+', 1, 2) project_heading,
+       regexp_substr( str, '.*[[:digit:]]+',1) project_start_date,
+       regexp_substr( str, '.*[[:digit:]]+',1,2) project_end_date,
+       regexp_substr( str, '.*[[:alpha:]]+', 1,9) project_location,
+       regexp_substr( str, '.*[[:digit:]]+', 1,3) project_availablity, 
+       regexp_substr( str, '.*[[:digit:]]+', 1,4)  application_close_date 
+from tmp;
+*/
 
 
 
