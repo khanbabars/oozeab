@@ -1,17 +1,22 @@
 CREATE OR replace force editionable view "GENERAL"."KEYMAN_PARSED_VIEW"(
     "LOAD_ID",
+    "PROJECT_DETAILS",
+    "PROJECT_URL",
     "PROJECT_HEADING",
     "PROJECT_START_DATE",
     "PROJECT_END_DATE",
     "PROJECT_LOCATION",
     "PROJECT_AVAILABLITY",
     "APPLICATION_CLOSE_DATE",
+    "PROJECT_CONTACT",
     "PROJECT_DESCRIPTION"
 ) DEFAULT COLLATION "USING_NLS_COMP" AS
     WITH tmp AS (
         SELECT
             load_id,
+            project_details,
             CAST(project_page AS VARCHAR2(4000) ) str,
+            project_url,
             regexp_replace(replace(CAST(project_page AS VARCHAR2(4000) ),'?',''),'\s+(' || CHR(32)
                                                                                                      || '|$)','\1') str_2,
             regexp_replace(replace(project_page,'?',''),'\s+(' || CHR(32)
@@ -22,17 +27,19 @@ CREATE OR replace force editionable view "GENERAL"."KEYMAN_PARSED_VIEW"(
     )
     SELECT
         load_id,
+        project_details,
+        project_url,
         regexp_substr(str,'[[:alpha:]]+',1,2) project_heading,
         regexp_substr(str,'.*[[:digit:]]+',1) project_start_date,
         regexp_substr(str,'.*[[:digit:]]+',1,2) project_end_date,
         regexp_substr(str,'.*[[:alnum:]]+',1,12) project_location,
         regexp_substr(str,'.*[[:digit:]]+',1,3) project_availablity,
         regexp_substr(str,'.*[[:digit:]]+',1,4) application_close_date,
+        regexp_substr(str,'.*[[:digit:]]+',1,5) project_contact,
         str   AS project_description
     FROM
         tmp;
 
-   
    
    
    --------------------------------------------------------------------

@@ -148,47 +148,68 @@ is
   ------------------------------------------------------------------------------
   lv_load_id number;
   lv_consultant_company varchar2(100):= 'Keyman AB';
-  lv_location varchar2(400);
   lv_project_details varchar2(4000);
-  lv_project_original_url  varchar2(4000);
   lv_project_heading varchar(4000);
   lv_project_url varchar2(4000);
   lv_project_contact varchar2(4000);
-  lv_cnt number;
+  lv_project_start_date varchar2(100);
+  lv_project_end_date varchar2(100);
  
   begin  
-
-
-        select 1 into lv_cnt from dual;
-
+ 
+   execute immediate 'truncate table keyman_projects';
+   
+    for i in 
+          ( select project_location
+                  ,load_id
+                   ,project_availablity||'%' as project_availablity
+                   ,application_close_date
+                   ,project_url
+                from keyman_parsed_view where lengthb(project_availablity) < 4) loop 
+                insert into keyman_projects(
+                             consultant_company
+                            ,project_availablity
+                            ,project_location
+                            ,application_close_date
+                            ,keyman_dump_load_id)
+                 values(
+                            lv_consultant_company
+                           ,i.project_availablity
+                           ,i.project_location
+                           ,i.application_close_date
+                           ,i.load_id)
+                  returning i.load_id into lv_load_id;
+                  
+     ---------------------------------------------------------------------------------
+     -- update project details, project heading, project start date, project end date
+     ---------------------------------------------------------------------------------
+                select project_details 
+                into lv_project_details
+                from keyman_parsed_view 
+                where load_id = lv_load_id;  
+                
+                update keyman_projects
+                set project_details = lv_project_details
+                where keyman_dump_load_id = lv_load_id;
+                  
+                
+                select project_heading, project_url, project_start_date, project_end_date, project_contact 
+                into lv_project_heading, lv_project_url, lv_project_start_date,lv_project_end_date, lv_project_contact 
+                from keyman_parsed_view 
+                where load_id = lv_load_id;  
+                
+                update keyman_projects
+                set project_heading    = lv_project_heading
+                   ,project_url        = lv_project_url
+                   ,project_start_date = lv_project_start_date
+                   ,project_end_date   = lv_project_end_date
+                   ,project_contact    = lv_project_contact
+                where keyman_dump_load_id = lv_load_id;  
+                  
+                  
+    end loop;
+    
 end parse_keyman;
-
-
-/*
-
-
-
-with tmp as 
-(select 
-load_id,
- cast(project_details as varchar2(4000) ) str_2,
-regexp_replace(replace(cast(project_details as varchar2(4000) ), '?', '' ) ,'\s+('||CHR(32)||'|$)', '\1')str,
-regexp_replace(replace(project_details, '?', '' ) ,'\s+('||CHR(32)||'|$)', '\1')  removed_empty,
-regexp_replace(replace(trim(regexp_replace(project_details, '[0-9]+')),'-', ' '),  '^\s*', null, 1, 0, 'm') remove_space
-from keyman_dump 
-where load_id  in ( 403,406)
-)
-    select
-       load_id,
-       regexp_substr( str, '[[:alpha:]]+', 1, 2) project_heading,
-       regexp_substr( str, '.*[[:digit:]]+',1) project_start_date,
-       regexp_substr( str, '.*[[:digit:]]+',1,2) project_end_date,
-       regexp_substr( str, '.*[[:alpha:]]+', 1,9) project_location,
-       regexp_substr( str, '.*[[:digit:]]+', 1,3) project_availablity, 
-       regexp_substr( str, '.*[[:digit:]]+', 1,4)  application_close_date 
-from tmp;
-*/
-
 
 
 
