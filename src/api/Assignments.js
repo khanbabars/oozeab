@@ -135,13 +135,20 @@ export default class Assignments extends React.Component {
                 .map((item, index) => (
                   <li key={index}  style={{  border: "1px ridge #e8e8e8", padding: "25px" }}>
                     <b >{item.project_heading}</b>
-                    <b style={{
-                        fontSize: "12px",
-                        borderRadius: "25px",
-                        color: "white",
-                        backgroundColor: "#426279",
-                        padding: "2px" }}> {item.company_initial}
-                    </b>
+                 
+                    <b style = 
+                    {item.company_initial === 'UP' ? 
+                    { fontSize: "12px",
+                    borderRadius: "25px",
+                    color: "white",
+                    backgroundColor: "#426279",
+                    padding: "2px"} : 
+
+                    {  fontSize: "15px",
+                    paddingLeft: '4px',
+                    fontStyle:'italic',
+                    color: '#009e59'}}>
+                       {item.company_initial}</b>
                     <br />
                     <div style={{fontSize: '15px', paddingTop:'10px'}}>
                     Startdatum: {item.project_start_date}
