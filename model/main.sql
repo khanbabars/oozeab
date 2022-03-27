@@ -26,7 +26,9 @@ project_end_date              varchar2(200),
 project_availablity           varchar2(500),
 project_location              varchar2(2000),
 application_close_date        varchar2(200),
-dump_load_id                  number   
+dump_load_id                  number, 
+company_website               varchar2(200),
+company_initial               varchar2(10)  
 );
 
 
@@ -99,9 +101,11 @@ create table keyman_projects (
         project_start_date       varchar2(200),
         project_end_date         varchar2(200),
         project_location         varchar2(2000),
-        keyman_dump_load_id             number,
+        keyman_dump_load_id      number,
         application_close_date   varchar2(300) ,
         project_details          clob,
-        project_availablity      varchar2(500)
+        project_availablity      varchar2(500),
+		company_website          varchar2(200),
+        company_initial          varchar2(10)  
 );
 ---------------------------------------

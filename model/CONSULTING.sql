@@ -6,6 +6,8 @@ CREATE OR REPLACE PACKAGE CONSULTING AS
   procedure parse_upgraded;
   
   procedure parse_keyman;
+  
+  procedure parse_projects;
 
 END CONSULTING;
 /
@@ -28,6 +30,8 @@ is
   lv_project_heading varchar(4000);
   lv_project_url varchar2(4000);
   lv_project_contact varchar2(4000);
+  lv_company_website varchar2(200) := 'https://upgraded.se/';
+  lv_company_initial varchar2(10) := 'UP';
  
   begin     
       execute immediate 'truncate table upgraded_projects';
@@ -41,6 +45,8 @@ is
                                         ,project_location
                                         ,application_close_date
                                         ,dump_load_id
+                                        ,company_website
+                                        ,company_initial
                                         )
                                         values
                                         (
@@ -50,7 +56,10 @@ is
                                           ,i.availiblity
                                           ,i.location
                                           ,i.applying_last_date
-                                          ,i.load_id)
+                                          ,i.load_id
+                                          ,lv_company_website
+                                          ,lv_company_initial
+                                          )
                                           returning i.load_id into lv_load_id;
                                           
        ----------------------------------------------------------
@@ -154,6 +163,8 @@ is
   lv_project_contact varchar2(4000);
   lv_project_start_date varchar2(100);
   lv_project_end_date varchar2(100);
+  lv_company_website varchar2(200) := 'https://www.keyman.se/';
+  lv_company_initial varchar2(10) := 'KM';
  
   begin  
  
@@ -165,19 +176,26 @@ is
                    ,project_availablity||'%' as project_availablity
                    ,application_close_date
                    ,project_url
-                from keyman_parsed_view where lengthb(project_availablity) < 4) loop 
+                from keyman_parsed_view 
+                where lengthb(project_availablity) < 4
+                and application_close_date >= sysdate) loop 
                 insert into keyman_projects(
                              consultant_company
                             ,project_availablity
                             ,project_location
                             ,application_close_date
-                            ,keyman_dump_load_id)
+                            ,keyman_dump_load_id
+                            ,company_website
+                            ,company_initial
+                                        )
                  values(
                             lv_consultant_company
                            ,i.project_availablity
                            ,i.project_location
                            ,i.application_close_date
-                           ,i.load_id)
+                           ,i.load_id
+                           ,lv_company_website
+                           ,lv_company_initial)
                   returning i.load_id into lv_load_id;
                   
      ---------------------------------------------------------------------------------
@@ -210,6 +228,23 @@ is
     end loop;
     
 end parse_keyman;
+
+
+procedure parse_projects
+is
+  ------------------------------------------------------------------------------
+  --  function:    parse_projects
+  --  created by:  Shazib Saleem Warraich, 2022-03-27
+  --  desc:        procedure will be used to prepare 
+  --               to parse all projects  
+  ------------------------------------------------------------------------------
+    lv_module varchar2(100) := 'parse_projects';
+begin
+
+        parse_upgraded;
+        parse_keyman;
+
+end parse_projects;
 
 
 

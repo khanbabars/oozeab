@@ -60,7 +60,7 @@ export const ApplyJob = (props) => {
       </h3>
       <p style={{ fontSize: "11px", textAlign: "left", paddingLeft: "25px" }}>
         <a
-          href="https://upgraded.se/"
+          href=  {assignment.items && assignment.items[0].company_website}
           target="_blank"
           rel="noopener noreferrer"
         >
