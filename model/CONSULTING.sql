@@ -34,10 +34,10 @@ is
   lv_company_initial varchar2(10) := 'UP';
  
   begin     
-      execute immediate 'truncate table upgraded_projects';
+      execute immediate 'truncate table projects';
        
        for i in (select * from upgraded_parsed_view where to_date(applying_last_date) >= sysdate) loop
-              insert into upgraded_projects(
+              insert into projects(
                                         consultant_company
                                         ,project_start_date
                                         ,project_end_date
@@ -74,7 +74,7 @@ is
                     from upgraded_dump     
                  where load_id = lv_load_id));           
                  
-                 update upgraded_projects
+                 update projects
                      set project_details = lv_project_details
                      where dump_load_id = lv_load_id;
        ----------------------------------------------------------
@@ -85,7 +85,7 @@ is
                 from  upgraded_dump 
                 where  load_id = lv_load_id;
             
-                update upgraded_projects
+                update projects
                 set project_heading = lv_project_heading
                 where dump_load_id = lv_load_id;    
        ----------------------------------------------------------
@@ -96,7 +96,7 @@ is
                 from  upgraded_dump 
                 where  load_id = lv_load_id;
             
-                update upgraded_projects
+                update projects
                 set project_url = lv_project_url
                 where dump_load_id = lv_load_id;     
                                 
@@ -131,7 +131,7 @@ is
                       regexp_replace((replace(project_contact, 'Kontaktuppgifter', '')), '([O])', '  \1') str 
                      from upgraded_dump where load_id = lv_load_id));
                         
-                        update upgraded_projects
+                        update projects
                         set project_contact = lv_project_contact
                         where dump_load_id = lv_load_id;     
                                         
@@ -164,27 +164,27 @@ is
   lv_project_start_date varchar2(100);
   lv_project_end_date varchar2(100);
   lv_company_website varchar2(200) := 'https://www.keyman.se/';
-  lv_company_initial varchar2(10) := 'KM';
+  lv_company_initial varchar2(10) := 'K';
  
   begin  
  
-   execute immediate 'truncate table keyman_projects';
+   --execute immediate 'truncate table keyman_projects';
    
     for i in 
           ( select project_location
                   ,load_id
-                   ,project_availablity||'%' as project_availablity
+                   ,' '||project_availablity||'%' as project_availablity
                    ,application_close_date
                    ,project_url
                 from keyman_parsed_view 
                 where lengthb(project_availablity) < 4
                 and application_close_date >= sysdate) loop 
-                insert into keyman_projects(
+                insert into projects(
                              consultant_company
                             ,project_availablity
                             ,project_location
                             ,application_close_date
-                            ,keyman_dump_load_id
+                            ,dump_load_id
                             ,company_website
                             ,company_initial
                                         )
@@ -206,9 +206,9 @@ is
                 from keyman_parsed_view 
                 where load_id = lv_load_id;  
                 
-                update keyman_projects
+                update projects
                 set project_details = lv_project_details
-                where keyman_dump_load_id = lv_load_id;
+                where dump_load_id = lv_load_id;
                   
                 
                 select project_heading, project_url, project_start_date, project_end_date, project_contact 
@@ -216,17 +216,19 @@ is
                 from keyman_parsed_view 
                 where load_id = lv_load_id;  
                 
-                update keyman_projects
+                update projects
                 set project_heading    = lv_project_heading
                    ,project_url        = lv_project_url
                    ,project_start_date = lv_project_start_date
                    ,project_end_date   = lv_project_end_date
                    ,project_contact    = lv_project_contact
-                where keyman_dump_load_id = lv_load_id;  
+                where dump_load_id = lv_load_id;  
                   
                   
     end loop;
-    
+
+commit;
+
 end parse_keyman;
 
 

@@ -2,6 +2,16 @@ import React from "react";
 import { API_ASSIGNMENTS } from "../cache/api";
 import ReactPaginate from "react-paginate";
 import styled from "styled-components";
+import { MultiSelect } from "react-multi-select-component";
+
+const options = [
+  { label: "Stockholm ", value: "Stockholm" },
+  { label: "Göteborg", value: "Göteborg" },
+  { label: "Malmö", value: "Malmö" },
+  { label: "Distans", value: "Distans" },
+
+];
+
 const MyPaginate = styled(ReactPaginate).attrs({
   activeClassName: "active",
 })`
@@ -60,6 +70,8 @@ export default class Assignments extends React.Component {
       pageCount: 0,
       offset: 0,
       perPageItems: [],
+      multiSelectlist: [],
+      multiListValue: [],
     };
   }
   async componentDidMount() {
@@ -71,7 +83,6 @@ export default class Assignments extends React.Component {
         perPageItems,
         loading: false,
       });
-    
     });
   }
 
@@ -91,7 +102,7 @@ export default class Assignments extends React.Component {
       this.setState({ active: true, btnProjectDetail: this.state.btnShowLess });
     } else {
       this.state.ids.splice(
-        this.state.ids.findIndex((id) => +e.target.id),
+        this.state.ids.findIndex((id) => + e.target.id),
         1
       );
       this.setState({ ids: this.state.ids });
@@ -102,7 +113,7 @@ export default class Assignments extends React.Component {
   };
 
   handlePageClick = (e) => {
-    const selectedPage = e.selected;
+    const selectedPage = e.selected + 1;
     const currentSelectionStart =
       selectedPage === 1 ? selectedPage : selectedPage * 10 - 10;
     const currentSelectionEnd = selectedPage * 10;
@@ -120,6 +131,11 @@ export default class Assignments extends React.Component {
     }
   };
 
+  handleMultiSelect = (e) => {
+
+    this.setState({ multiSelectlist: e });
+  };
+
   render() {
     const { loading } = this.state;
     if (loading) {
@@ -130,41 +146,81 @@ export default class Assignments extends React.Component {
           <div>
             {" "}
             <ul>
+              <MultiSelect
+                options={options}
+                value={this.state.multiSelectlist}
+                onChange={this.handleMultiSelect}
+                labelledBy="selectList"
+                overrideStrings={{
+                  selectSomeItems: "Plats",
+                  search: "Sök",
+                  selectAll: "Alla",
+                }}
+              />
+
+    {/*           {this.state.multiSelectlist.map((location, index) => (
+                // <li key={`${location}-${index}`}>
+                <li key={index}>{location.value}</li>
+              ))}
+ */}
+              <br />
               {this.state.perPageItems
+                .filter((item) =>
+                  this.state.multiSelectlist.length
+                    ? this.state.multiSelectlist.find((selected) => {
+                        const test = new RegExp(
+                          `^${selected.value}`, 'g'
+                        ).test(item.project_location.trim());
+                       
+                    /*     console.log(
+                          `${selected.value} ${item.project_location} ${test}` 
+                        );*/
+                        return test;
+                      })
+                    : true
+                )
                 .slice(0, this.state.setVisible)
                 .map((item, index) => (
-                  <li key={index}  style={{  border: "1px ridge #e8e8e8", padding: "25px" }}>
-                    <b >{item.project_heading}</b>
-                 
-                    <b style = 
-                    {item.company_initial === 'UP' ? 
-                    { fontSize: "12px",
-                    borderRadius: "25px",
-                    color: "white",
-                    backgroundColor: "#426279",
-                    padding: "2px"} : 
-
-                    {  fontSize: "15px",
-                    paddingLeft: '4px',
-                    fontStyle:'italic',
-                    color: '#009e59'}}>
-                       {item.company_initial}</b>
+                  <li
+                    key={index}
+                    style={{ border: "1px ridge #e8e8e8", padding: "25px" }}
+                  >
+                    <b>{item.project_heading}</b>
+                    <b
+                      style={
+                        item.company_initial === "UP"
+                          ? {
+                              fontSize: "12px",
+                              borderRadius: "25px",
+                              color: "white",
+                              backgroundColor: "#426279",
+                              padding: "2px",
+                            }
+                          : {
+                              fontSize: "15px",
+                              paddingLeft: "4px",
+                              fontStyle: "italic",
+                              color: "#009e59",
+                            }
+                      }
+                    >
+                      {item.company_initial}
+                    </b>
                     <br />
-                    <div style={{fontSize: '15px', paddingTop:'10px'}}>
-                    Startdatum: {item.project_start_date}
-                    <br />
-                    Slutdatum: {item.project_end_date}
-                    <br />
-                    Ansök senast:{item.application_close_date}
-                    <br />
-                    Omfattning: {item.project_availablity}
+                    <div style={{ fontSize: "15px", paddingTop: "10px" }}>
+                      Startdatum: {item.project_start_date}
+                      <br />
+                      Slutdatum: {item.project_end_date}
+                      <br />
+                      Ansök senast:{item.application_close_date}
+                      <br />
+                      Omfattning: {item.project_availablity}
                     </div>
                     <b
                       style={{
                         fontSize: "16px",
                         fontWeight: "normal",
-                        whiteSpace: "pre-wrap"
-                        
+                        whiteSpace: "pre-wrap",
                       }}
                     >
                       {this.state.ids.includes(+item.project_id) &&
@@ -180,7 +236,7 @@ export default class Assignments extends React.Component {
                         color: "white",
                         backgroundColor: "#17a2b8",
                         padding: "5px",
-                        border: "1px solid black"
+                        border: "1px solid black",
                       }}
                     >
                       {item.project_location}
@@ -201,8 +257,6 @@ export default class Assignments extends React.Component {
                     >
                       Ansök
                     </button>
-                    
-                 
                     <br />
                   </li>
                 ))}
@@ -213,56 +267,6 @@ export default class Assignments extends React.Component {
               pageCount={this.state.pageCount}
               onPageChange={this.handlePageClick}
             />
-            {/* <nav aria-label="Page navigation comments">
-            <ReactPaginate 
-              previousLabel={"Föregående"}
-              nextLabel={"Nästa"}
-              breakLabel={"..."}
-              breakClassName={"page-item"}
-              breakLinkClassName="page-link"
-              pageCount={this.state.pageCount}
-              marginPagesDisplayed={2}
-              pageRangeDisplayed={5}
-              onPageChange={this.handlePageClick}
-              containerClassName={"pagination justify-content-center"}
-              pageClassName="page-item"
-              pageLinkClassName="page-link"
-              previousClassName="page-item"
-              previousLinkClassName="page-link"
-              nextClassName="page-item"
-              nextLinkClassName="page-link"
-              subContainerClassName={"pages pagination"}
-              activeClassName={"active"}
-              renderOnZeroPageCount={null}
-
-              hrefBuilder={(page, pageCount, selected) =>
-                page >= 1 && page <= pageCount ? `/page/${page}` : '#'
-              }
-              hrefAllControls
-       
-              onClick={(clickEvent) => {
-                console.log('onClick', clickEvent);
-                // Return false to prevent standard page change,
-                // return false; // --> Will do nothing.
-                // return a number to choose the next page,
-                // return 4; --> Will go to page 5 (index 4)
-                // return nothing (undefined) to let standard behavior take place.
-              }}
-            />
-             </nav> */}
-            <br />
-            {/* <button
-              style={{
-                fontSize: "18px",
-                borderRadius: "4px",
-                textAlign: "center",
-                marginLeft: "500px",
-                marginBottom: "100px",
-              }}
-              onClick={this.loadMoreItems}
-            >
-              Visa flera{" "}
-            </button> */}
             <br />
             <br />
             <br />
