@@ -8,8 +8,7 @@ const options = [
   { label: "Stockholm ", value: "Stockholm" },
   { label: "Göteborg", value: "Göteborg" },
   { label: "Malmö", value: "Malmö" },
-  { label: "Distans", value: "Distans" },
-
+ // { label: "Distans", value: "Distans" },
 ];
 
 const MyPaginate = styled(ReactPaginate).attrs({
@@ -102,7 +101,7 @@ export default class Assignments extends React.Component {
       this.setState({ active: true, btnProjectDetail: this.state.btnShowLess });
     } else {
       this.state.ids.splice(
-        this.state.ids.findIndex((id) => + e.target.id),
+        this.state.ids.findIndex((id) => +e.target.id),
         1
       );
       this.setState({ ids: this.state.ids });
@@ -132,10 +131,33 @@ export default class Assignments extends React.Component {
   };
 
   handleMultiSelect = (e) => {
-
     this.setState({ multiSelectlist: e });
+    this.setState({
+      pageCount: Math.ceil(
+        this.state.items.filter((item) => {
+          const str = item.project_location.includes("/")
+            ? item.project_location.trim().split("/")[0]
+            : item.project_location.trim();
+          return e.length
+            ? new RegExp(`${str}`, "g").test(e.map((i) => i.value).join())
+            : true;
+        }).length / this.state.setVisible
+      ),
+    });
   };
-
+  multiSelectFilter(items) {
+    return items.filter((item) =>
+      this.state.multiSelectlist.length
+        ? this.state.multiSelectlist.find((selected) => {
+            const filterAssignments = new RegExp(
+              `^${selected.value}`,
+              "g"
+            ).test(item.project_location.trim());
+            return filterAssignments;
+          })
+        : true
+    );
+  }
   render() {
     const { loading } = this.state;
     if (loading) {
@@ -158,27 +180,8 @@ export default class Assignments extends React.Component {
                 }}
               />
 
-    {/*           {this.state.multiSelectlist.map((location, index) => (
-                // <li key={`${location}-${index}`}>
-                <li key={index}>{location.value}</li>
-              ))}
- */}
               <br />
-              {this.state.perPageItems
-                .filter((item) =>
-                  this.state.multiSelectlist.length
-                    ? this.state.multiSelectlist.find((selected) => {
-                        const test = new RegExp(
-                          `^${selected.value}`, 'g'
-                        ).test(item.project_location.trim());
-                       
-                    /*     console.log(
-                          `${selected.value} ${item.project_location} ${test}` 
-                        );*/
-                        return test;
-                      })
-                    : true
-                )
+              {this.multiSelectFilter(this.state.perPageItems)
                 .slice(0, this.state.setVisible)
                 .map((item, index) => (
                   <li
@@ -227,8 +230,6 @@ export default class Assignments extends React.Component {
                         item.project_details}
                     </b>{" "}
                     <br />
-                    {/*    
-    <ApplyButton item={item} showLess={this.state.btnShowLess} event={this.showProjectDetail} text={this.state.btnShowMore} ids={this.state.ids}/> */}
                     <b
                       style={{
                         fontSize: "13px",
