@@ -30,6 +30,7 @@ function Main() {
           <Navigationbar />
           <Jumbotron />
           <Page id="hem" />
+          <Page id="customers" />
           <Page id="Om" />
           <Page id="tjanster" />
           <Page id="konsultuppdrag" browseAssignment={browseAssignment} />
