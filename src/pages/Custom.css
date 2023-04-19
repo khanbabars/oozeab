@@ -86,23 +86,6 @@
   color: white;
 }
 
-.customers {
-
-  color: black;
-  position: relative;
-  font-size: 25px;
-  margin-top: 0%;
-  animation: slide-full 7s infinite;
-  background-color:white;
-}
-
-@keyframes slide-full {
-  from {left: 0%;}
-  to {left: 50%;}
-  
-
-}
-
 
 .middle {
   padding-top: 130px;

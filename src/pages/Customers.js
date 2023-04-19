@@ -7,8 +7,7 @@ export const Customers = () => {
     
       <div>
 
-        <p className="customers">Customers CustomersCustomersCustomersCustomersCustomersCustomersCustomersCustomersCustomers</p>
- 
+  
       </div>
  
   );
