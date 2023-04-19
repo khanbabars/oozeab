@@ -168,7 +168,7 @@ export default class Assignments extends React.Component {
           <div>
             {" "}
             <ul>
-              <MultiSelect
+              {/* <MultiSelect
                 options={options}
                 value={this.state.multiSelectlist}
                 onChange={this.handleMultiSelect}
@@ -178,7 +178,7 @@ export default class Assignments extends React.Component {
                   search: "Sök",
                   selectAll: "Alla",
                 }}
-              />
+              /> */}
 
               <br />
               {this.multiSelectFilter(this.state.perPageItems)
