@@ -13,7 +13,6 @@ import Footer from "./components/Footer";
 
 function Main() {
   const [switchRoute, setstate] = useState(false);
-
   const browseAssignment = () => {
     if (switchRoute === false) {
       setstate({ switchRoute: true });

@@ -22,23 +22,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-##blog related
-images
-./Example.js
-jumbotron.js
-PostExample.js
-Blink.js
-Example.js
-favicon.ico
-public
-api/BlogTitle.js
-api/ApiTest.js
-api.js
-TestApi.js
-Main.js
-Prototype.js
-blogTitle.js
-apiTest.js
-prototype.js
-test.js
+
 api/maxcdn.bootstrapcdn.com
