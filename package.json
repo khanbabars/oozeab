@@ -15,7 +15,7 @@
     "cors": "^2.8.5",
     "headers": "^0.9.6",
     "http-proxy-middleware": "^1.0.5",
-    "jquery": "^3.5.1",
+    "jquery": "^3.6.4",
     "mdb-react-ui-kit": "^2.3.0",
     "mdbreact": "^4.27.0",
     "paginate-array": "^2.1.0",
