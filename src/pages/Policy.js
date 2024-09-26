@@ -1,5 +1,5 @@
 import React from "react";
-import { MDBContainer } from "mdbreact";
+import Container from 'react-bootstrap/Container';
 import { NavLink } from "react-router-dom";
 import logos from "../images/ooze.PNG";
 import Footer from "../components/Footer";
@@ -23,7 +23,7 @@ export const Policy = () => {
       </NavLink>
       <br /> <br />
       <hr />
-      <MDBContainer className="text-left my-5">
+      <Container className="text-left my-5">
         <div>
           <br />
           <h3>Personuppgiftspolicy</h3>
@@ -143,7 +143,7 @@ export const Policy = () => {
             DSO (Dataskyddsombud) Shazib Saleem Warraich(0700679299)
           </p>
         </div>
-      </MDBContainer>
+      </Container>
       <CookieConsentPage />
       <Footer />
     </React.Fragment>

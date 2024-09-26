@@ -2,10 +2,15 @@ import React, { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
 import { MdClose } from "react-icons/md";
-import { MDBRow, MDBCol, MDBCardBody, MDBBtn, MDBInput } from "mdbreact";
+import {  MDBInput } from "mdbreact";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 import axios from "axios";
 import { useState } from "react";
 import { OOZE_EMAIL_SUBSCRIPTION } from "../cache/api";
+import Container from 'react-bootstrap/Container';
 
 const Background = styled.div`
   width: 100%;
@@ -149,9 +154,10 @@ export const EmailModal = ({ showModal, setShowModal }) => {
                   </p>
                   <form onSubmit={submitForm}>
                     <div>
-                      <MDBRow>
-                        <MDBCol className="lg-12 mb-10 text-left my-5">
-                          <MDBCardBody>
+                    <Container>
+                      <Row>
+                        <Col className="lg-12 mb-10 text-left my-5">
+                          <Card>
                             <MDBInput
                               onChange={(e) => setName(e.target.value)}
                               hint="Namn *"
@@ -168,17 +174,19 @@ export const EmailModal = ({ showModal, setShowModal }) => {
                             <br />
 
                             <div className="text-center">
-                              <MDBBtn
+                              <Button
                                 color="info"
                                 type="submit"
                                 onClick={closeModal}
                               >
                                 Skicka
-                              </MDBBtn>
+                              </Button>
+                              
                             </div>
-                          </MDBCardBody>
-                        </MDBCol>
-                      </MDBRow>
+                          </Card>
+                        </Col>
+                      </Row>
+                      </Container>
                     </div>
                   </form>
                 </ModalContent>

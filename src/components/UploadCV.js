@@ -2,19 +2,25 @@ import React from "react";
 import axios from "axios";
 import { OOZE_RECEIVE_CONSULTANT_RESUME } from "../cache/api";
 import {
-  MDBRow,
-  MDBCol,
-  MDBCard,
+
   MDBCardBody,
-  MDBBtn,
+
   MDBInput,
-  MDBContainer,
-  MDBView,
+
+  MDBView
 } from "mdbreact";
-import { MDBCheckbox } from "mdb-react-ui-kit";
+
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
+
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { useState } from "react";
+
+
 
 const UploadCV = ({ projectProps }) => {
   const [firstName, setFirstName] = useState();
@@ -67,11 +73,11 @@ const UploadCV = ({ projectProps }) => {
   };
   if (apiReply)
     return (
-      <MDBContainer>
-        <MDBRow>
-          <MDBCol lg="12" className="lg-0 mb-10 text-left my-5">
-            <MDBCard>
-              <MDBCardBody>
+      <Container>
+        <Row>
+          <Col lg="12" className="lg-0 mb-10 text-left my-5">
+            <Card>
+              
                 <MDBView>
                   <img
                     src={require("../images/mix.jpg")}
@@ -103,20 +109,20 @@ const UploadCV = ({ projectProps }) => {
                   Om vi inte hörs vidare så önskar jag dig lycka till i
                   framtiden!
                 </p>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-        </MDBRow>
-      </MDBContainer>
+              </Card>
+            
+          </Col>
+        </Row>
+      </Container>
     );
 
   return (
     <React.Fragment>
       <form onSubmit={submitForm}>
         <div className="container">
-          <MDBRow>
-            <MDBCol lg="12" className="lg-0 mb-10 text-left my-5">
-              <MDBCard style={{ fontWeight: "bold" }}>
+          <Row>
+            <Col lg="12" className="lg-0 mb-10 text-left my-5">
+              <Card style={{ fontWeight: "bold" }}>
                 <MDBCardBody>
                   <p
                     style={{
@@ -195,7 +201,8 @@ const UploadCV = ({ projectProps }) => {
                       style={{ color: "#2F4F4F" }}
                     >
                       {" "}
-                      <MDBCheckbox
+                      <input
+                       type="checkbox"
                         onChange={checkboxHandler}
                         name="flexCheck"
                       />
@@ -204,18 +211,18 @@ const UploadCV = ({ projectProps }) => {
                   </div>
                   <br /> <br /> <br />
                   <div className="text-center">
-                    <MDBBtn color="info" type="submit" disabled={termAgree}>
+                    <Button color="info" type="submit" disabled={termAgree}>
                       Skicka
-                    </MDBBtn>
+                    </Button>
                   </div>
                   {/* 
         <div>
       <input type="checkbox" />
     </div> */}
                 </MDBCardBody>
-              </MDBCard>
-            </MDBCol>
-          </MDBRow>
+              </Card>
+            </Col>
+          </Row>
         </div>
       </form>
     </React.Fragment>

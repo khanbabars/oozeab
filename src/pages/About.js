@@ -1,10 +1,10 @@
 import React from "react";
-import { MDBContainer } from "mdbreact";
+import Container from 'react-bootstrap/Container';
 import "../pages/Custom.css";
 
 export const About = () => {
   return (
-    <MDBContainer className="text-left my-5">
+    <Container className="text-left my-5">
       <div>
         <br /> <br /> <br /> <br />
         <br /> <br /> <br /> <br />
@@ -40,6 +40,6 @@ export const About = () => {
       <br /> <br />
       <br /> <br />
       <div className="aboutus"></div>
-    </MDBContainer>
+    </Container>
   );
 };

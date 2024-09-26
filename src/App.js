@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navigationbar from "../src/components/Navigationbar";
+import {Navigationbar} from "../src/components/Navigationbar";
 import Page from "./components/Page";
 import { Provider } from "react-redux";
 import store from "./cache/store";
@@ -26,7 +26,7 @@ function Main() {
       <React.Fragment>
         <CookieConsentPage />
         <Provider store={store}>
-          <Navigationbar />
+          {<Navigationbar />}
           <Jumbotron />
           <Page id="hem" />
           <Page id="customers" />

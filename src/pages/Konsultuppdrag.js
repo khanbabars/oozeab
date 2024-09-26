@@ -1,10 +1,10 @@
 import React from "react";
-import { MDBContainer } from "mdbreact";
+import Container from 'react-bootstrap/Container';
 import Assignments from "../api/Assignments";
 
 export const Konsultuppdrag = ({ browseAssignment }) => {
   return (
-    <MDBContainer>
+    <Container>
       
       <div>
  
@@ -22,6 +22,6 @@ export const Konsultuppdrag = ({ browseAssignment }) => {
         <Assignments browseAssignment={browseAssignment} />
         <br/> <br/> <br/> <br/>
       </div>
-    </MDBContainer>
+    </Container>
   );
 };

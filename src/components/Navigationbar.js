@@ -1,68 +1,47 @@
-import React from "react";
-import {
-  MDBNavbar,
-  MDBNavbarBrand,
-  MDBNavbarToggler,
-  MDBCollapse,
-  MDBMask,
-  MDBView,
-} from "mdbreact";
+import React, {useState} from "react";
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
 import "../App.css";
-import Navbar from "./Navbar";
+import {CustomNavbar} from "./Navbar";
 import Page from "./Page";
 import { BrowserRouter as Router } from "react-router-dom";
 
-class Navigationbar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      collapse: false,
-      isWideEnough: false,
-    };
-    this.onClick = this.onClick.bind(this);
+export const Navigationbar = () => {
+
+
+  
+  const [collapse, setCollapse] = useState(false);
+  const [isWideEnough, setisWideEnough] = useState(false);
+  const onClick = () => {  
+    setCollapse(!collapse)
+    
   }
+    
 
-  onClick() {
-    this.setState({
-      collapse: !this.state.collapse,
-    });
-  }
+  return (
+    <div>
+      <header>
+        <Router>
+          
+          <Page id="hem" />
+          <br />
+      <Navbar bg="white" data-bs-theme="white"   fixed="top"  >
+        <Container fluid>
+        <CustomNavbar/>
+        </Container>
+      </Navbar> 
 
-  render() {
-    return (
-      <div>
-        <header>
-          <Router>
-            <Page id="hem" />
-            <MDBNavbar
-              fixed="top"
-              dark
-              expand="md"
-              scrolling
-              transparent
-              style={{ backgroundColor: "white" }}
-            >
-              <MDBNavbarBrand>
-                <Navbar />
-              </MDBNavbarBrand>
-              {!this.state.isWideEnough && (
-                <MDBNavbarToggler onClick={this.onClick} />
-              )}
-              <MDBCollapse isOpen={this.state.collapse} navbar></MDBCollapse>
-            </MDBNavbar>
+      
+   
 
-            <MDBView>
-              {/* <Jumbotron/> */}
-              <MDBMask
-                overlay="purple-light"
-                className="flex-center flex-column text-white text-center"
-              ></MDBMask>
-            </MDBView>
-          </Router>
-        </header>
-      </div>
+      
+        </Router>
+      </header>
+    </div>
+  
+
     );
-  }
-}
+  
+};
 
 export default Navigationbar;

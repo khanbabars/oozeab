@@ -1,10 +1,10 @@
 import React from "react";
-import { MDBContainer } from "mdbreact";
+import Container from 'react-bootstrap/Container';
 
 export const Home = () => {
-  return (
-    <MDBContainer className="text-center my-5">
-      <div></div>
-    </MDBContainer>
+  return ( 
+     <Container>
+       <div></div>
+     </Container>
   );
 };
