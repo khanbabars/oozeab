@@ -3,7 +3,7 @@ import axios from "axios";
 import { OOZE_RECEIVE_CONSULTANT_RESUME } from "../cache/api";
 import {
 
-  MDBCardBody,
+
 
   MDBInput,
 
@@ -123,7 +123,7 @@ const UploadCV = ({ projectProps }) => {
           <Row>
             <Col lg="12" className="lg-0 mb-10 text-left my-5">
               <Card style={{ fontWeight: "bold" }}>
-                <MDBCardBody>
+                <Card.Body>
                   <p
                     style={{
                       textAlign: "center",
@@ -219,7 +219,7 @@ const UploadCV = ({ projectProps }) => {
         <div>
       <input type="checkbox" />
     </div> */}
-                </MDBCardBody>
+                </Card.Body>
               </Card>
             </Col>
           </Row>

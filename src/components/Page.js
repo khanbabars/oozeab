@@ -21,9 +21,9 @@ export default function Page({ id, browseAssignment }) {
         } else if (id === "Om") {
           return <About />;
         } else if (id === "kontakt") {
-          return // <Contact />;
+          return  <Contact />;
         } else if (id === "kund") {
-          return null//<Contact />;
+          return <Contact />;
         }
       })()}
     </div>

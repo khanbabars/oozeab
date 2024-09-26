@@ -1,19 +1,14 @@
 import React from "react";
-import { MDBContainer } from "mdbreact";
-import {
-  MDBCard,
-  MDBCardBody,
-  MDBCardTitle,
-  MDBCardText,
-  MDBRow,
-  MDBCol,
-} from "mdbreact";
-import "./Custom.css";
 
+import "./Custom.css";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Card from 'react-bootstrap/Card';
 export const Services = () => {
   return (
     <React.Fragment>
-      <MDBContainer className="text-left my-5">
+      <Container className="text-left my-5">
         <div>
           <br /> <br /> <br /> <br />
           <br /> <br /> <br /> <br />
@@ -45,145 +40,145 @@ export const Services = () => {
             digitaliseringen enkel.
           </p>
           <br /> <br /> <br /> <br />
-          <MDBRow>
-            <MDBCol md="4" className="d-flex justify-content-center">
-              <MDBCard className="cards">
-                <MDBCardBody>
-                  <MDBCardTitle>Databasutveckling </MDBCardTitle>
-                  <MDBCardText>
+          <Row>
+            <Col md="4" className="d-flex justify-content-center">
+              <Card className="cards">
+                <Card.Body>
+                  <Card.Title>Databasutveckling </Card.Title>
+                  <Card.Text>
                     Vi har stark kunskap inom databas område vi jobbar daligen
                     med DBA, Performance, Utveckling, licenering, strategy,
                     design, arkitektur. Våra experter arbetar daligen med stora
                     databaser Oracle, Micrrosoft SQL, Postgres
-                  </MDBCardText>
+                  </Card.Text>
                   {/* <MDBBtn href='#'>Go somewhere</MDBBtn> */}
-                </MDBCardBody>
-              </MDBCard>
-            </MDBCol>
+                </Card.Body>
+              </Card>
+            </Col>
 
-            <MDBCol md="4" className="d-flex justify-content-center">
-              <MDBCard className="cards">
-                <MDBCardBody>
-                  <MDBCardTitle>Förvaltning</MDBCardTitle>
-                  <MDBCardText>
+            <Col md="4" className="d-flex justify-content-center">
+              <Card className="cards">
+                <Card.Body>
+                  <Card.Title>Förvaltning</Card.Title>
+                  <Card.Text>
                     I en digital värld är det viktigt att IT-system utvecklas
                     och förvaltas. För att uppnå detta erbjuder vi dedikerade
                     och involverade utvecklare som kontinuerligt jobbar med
                     systemet. Vi hjälper er att hålla era produkter levande.
-                  </MDBCardText>
+                  </Card.Text>
                   {/* <MDBBtn href='#'>Go somewhere</MDBBtn> */}
-                </MDBCardBody>
-              </MDBCard>
-            </MDBCol>
+                </Card.Body>
+              </Card>
+            </Col>
 
-            <MDBCol md="4" className="d-flex justify-content-center">
-              <MDBCard className="cards">
-                <MDBCardBody>
-                  <MDBCardTitle>Front-End</MDBCardTitle>
-                  <MDBCardText>
+            <Col md="4" className="d-flex justify-content-center">
+              <Card className="cards">
+                <Card.Body>
+                  <Card.Title>Front-End</Card.Title>
+                  <Card.Text>
                     Vi håller oss ständigt ajour med de senaste teknikerna inom
                     front-end. Med verktyg som HTML, CSS, Javascript, React och
                     React Native bygger vi snabba och intuitiva gränssnitt som
                     sätter användaren i fokus.
-                  </MDBCardText>
+                  </Card.Text>
                   {/* <MDBBtn href='#'>Go somewhere</MDBBtn> */}
-                </MDBCardBody>
-              </MDBCard>
-            </MDBCol>
-          </MDBRow>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
           <br /> <br />
-          <MDBRow>
-            <MDBCol md="4" className="d-flex justify-content-center">
-              <MDBCard className="cards">
-                <MDBCardBody>
-                  <MDBCardTitle>Integration </MDBCardTitle>
-                  <MDBCardText>
+          <Row>
+            <Col md="4" className="d-flex justify-content-center">
+              <Card className="cards">
+                <Card.Body>
+                  <Card.Title>Integration </Card.Title>
+                  <Card.Text>
                     Vi jobbar med allt ifrån databasmodellering till
                     API-utveckling samt integration mot tredjepartsleverantörer.
                     Dessutom använder vi oss av de senaste välbeprövade
                     ramverken för att snabbt bygga upp stabila och
                     användarvänliga gränssnitt.
-                  </MDBCardText>
+                  </Card.Text>
                   {/* <MDBBtn href='#'>Go somewhere</MDBBtn> */}
-                </MDBCardBody>
-              </MDBCard>
-            </MDBCol>
+                </Card.Body>
+              </Card>
+            </Col>
 
-            <MDBCol md="4" className="d-flex justify-content-center">
-              <MDBCard className="cards">
-                <MDBCardBody>
-                  <MDBCardTitle>Backend och Fullstack utveckling</MDBCardTitle>
-                  <MDBCardText>
+            <Col md="4" className="d-flex justify-content-center">
+              <Card className="cards">
+                <Card.Body>
+                  <Card.Title>Backend och Fullstack utveckling</Card.Title>
+                  <Card.Text>
                     Vi har stark kunskap inom databas område vi jobbar daligen
                     med DBA, Performance, Utveckling, licenering, strategy,
                     design, arkitektur. Våra experter arbetar daligen med stora
                     databaser Oracle, Micrrosoft SQL, Postgres
-                  </MDBCardText>
+                  </Card.Text>
                   {/* <MDBBtn href='#'>Go somewhere</MDBBtn> */}
-                </MDBCardBody>
-              </MDBCard>
-            </MDBCol>
+                </Card.Body>
+              </Card>
+            </Col>
 
-            <MDBCol md="4" className="d-flex justify-content-center">
-              <MDBCard className="cards">
-                <MDBCardBody>
-                  <MDBCardTitle>Business Intelligence</MDBCardTitle>
-                  <MDBCardText>
+            <Col md="4" className="d-flex justify-content-center">
+              <Card className="cards">
+                <Card.Body>
+                  <Card.Title>Business Intelligence</Card.Title>
+                  <Card.Text>
                     Vi håller oss ständigt ajour med de senaste teknikerna inom
                     front-end. Med verktyg som HTML, CSS, Javascript, React och
                     React Native bygger vi snabba och intuitiva gränssnitt som
                     sätter användaren i fokus.
-                  </MDBCardText>
+                  </Card.Text>
                   {/* <MDBBtn href='#'>Go somewhere</MDBBtn> */}
-                </MDBCardBody>
-              </MDBCard>
-            </MDBCol>
-          </MDBRow>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
           <br /> <br />
-          <MDBRow>
-            <MDBCol md="4" className="d-flex justify-content-center">
-              <MDBCard className="cards">
-                <MDBCardBody>
-                  <MDBCardTitle>Konsultuppdrag </MDBCardTitle>
-                  <MDBCardText>
+          <Row>
+            <Col md="4" className="d-flex justify-content-center">
+              <Card className="cards">
+                <Card.Body>
+                  <Card.Title>Konsultuppdrag </Card.Title>
+                  <Card.Text>
                     Vi jobbar med allt ifrån databasmodellering till
                     API-utveckling samt integration mot tredjepartsleverantörer.
                     Dessutom använder vi oss av de senaste välbeprövade
                     ramverken för att snabbt bygga upp stabila och
                     användarvänliga gränssnitt.
-                  </MDBCardText>
+                  </Card.Text>
                   {/* <MDBBtn href='#'>Go somewhere</MDBBtn> */}
-                </MDBCardBody>
-              </MDBCard>
-            </MDBCol>
+                </Card.Body>
+              </Card>
+            </Col>
 
-            <MDBCol md="4" className="d-flex justify-content-center">
-              <MDBCard className="cards">
-                <MDBCardBody>
-                  <MDBCardTitle> Kandidat intervju</MDBCardTitle>
-                  <MDBCardText>
+            <Col md="4" className="d-flex justify-content-center">
+              <Card className="cards">
+                <Card.Body>
+                  <Card.Title> Kandidat intervju</Card.Title>
+                  <Card.Text>
                     vi hjälper till med kandidatintervjun. vi använder vårt
                     stora nätverk av experter för att filtrera bra kandidater
                     som ger kvalitet och känns rätt för slutkunden.
-                  </MDBCardText>
+                  </Card.Text>
                   {/* <MDBBtn href='#'>Go somewhere</MDBBtn> */}
-                </MDBCardBody>
-              </MDBCard>
-            </MDBCol>
+                </Card.Body>
+              </Card>
+            </Col>
 
-            <MDBCol md="4" className="d-flex justify-content-center">
-              <MDBCard className="cards">
-                <MDBCardBody>
-                  <MDBCardTitle>
+            <Col md="4" className="d-flex justify-content-center">
+              <Card className="cards">
+                <Card.Body>
+                  <Card.Title>
                     {" "}
                     Bokföring, fakturering och finansiella tjänster
-                  </MDBCardTitle>
-                  <MDBCardText>Vi kan hjälpa till med bokföring</MDBCardText>
+                  </Card.Title>
+                  <Card.Text>Vi kan hjälpa till med bokföring</Card.Text>
                   {/* <MDBBtn href='#'>Go somewhere</MDBBtn> */}
-                </MDBCardBody>
-              </MDBCard>
-            </MDBCol>
-          </MDBRow>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
           <br />
           <br />
           <br />
@@ -201,7 +196,7 @@ export const Services = () => {
         <br />
         <br /> <br />
         <br /> <br />
-      </MDBContainer>
+      </Container>
     </React.Fragment>
   );
 };

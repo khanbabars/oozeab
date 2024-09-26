@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import {
-  MDBRow,
-  MDBCol,
-  MDBCard,
-  MDBCardBody,
-  MDBBtn,
-  MDBInput,
-  MDBView,
-  MDBContainer,
+ 
+  MDBInput
 } from "mdbreact";
+
+
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
 import axios from "axios";
 import { API_POST_CONTACT } from "../cache/api";
 
@@ -46,12 +47,12 @@ export default class Contact extends Component {
           className="my-5"
           style={{ align: "center" }}
         >
-          <MDBContainer>
-            <MDBRow>
-              <MDBCol lg="12" className="lg-0 mb-12 text-left my-5">
-                <MDBCard>
-                  <MDBCardBody>
-                    <MDBView>
+          <Container>
+            <Row>
+              <Col lg="12" className="lg-0 mb-12 text-left my-5">
+                <Card>
+                  <Card.Body>
+                    <Card.Title>
                       <img
                         src={require("../images/mix.jpg")}
                         style={{
@@ -63,7 +64,7 @@ export default class Contact extends Component {
                         }}
                         alt="mix_photo"
                       />
-                    </MDBView>
+                    </Card.Title>
 
                     <div className="md-form">
                       <label
@@ -121,21 +122,21 @@ export default class Contact extends Component {
                     </div>
 
                     <div className="text-center">
-                      <MDBBtn color="info" type="submit">
+                      <Button color="info" type="submit">
                         Skicka
-                      </MDBBtn>
+                      </Button>
                     </div>
-                  </MDBCardBody>
-                </MDBCard>
-              </MDBCol>
+                  </Card.Body>
+                </Card>
+              </Col>
 
-              <MDBCol lg="7">
-                <MDBRow className="text-center">
-                  <MDBCol md="6"></MDBCol>
-                </MDBRow>
-              </MDBCol>
-            </MDBRow>
-          </MDBContainer>
+              <Col lg="7">
+                <Row className="text-center">
+                  <Col md="6"></Col>
+                </Row>
+              </Col>
+            </Row>
+          </Container>
         </form>
       </div>
     );
